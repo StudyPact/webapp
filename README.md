@@ -12,5 +12,8 @@ Setup
 
 Start
 ------
+
+```
 $ nvm use 0.10.28
 $ foreman start
+```
