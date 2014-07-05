@@ -1,0 +1,24 @@
+input.ng-invalid {
+    border: solid 1px red;
+}
+
+input.ng-valid {
+    border: solid 1px green;
+}
+
+.login-form {
+    border: solid 1px grey;
+    border-radius: 5px;
+    width: 400px;
+    height: 280px;
+    margin: 30px;
+    padding: 20px;
+}
+
+#loginButton {
+    float: right;
+}
+.error {
+    color:red;
+    float:right;
+}
