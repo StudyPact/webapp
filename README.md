@@ -1,4 +1,4 @@
-The StudyPact Platform
-======================
+StudyPact WebApp
+================
 
 This is going to be awesome!
