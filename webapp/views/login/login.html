@@ -1,0 +1,18 @@
+<form name="loginForm" class="form-horizontal login-form" ng-init="init()" ng-submit="login()">
+    <h2>Login</h2>
+    <br>
+    <label>email</label>
+    <br>
+    <input type="email" name="email" ng-model="authEmail" size="30" placeholder="enter user email"/>
+
+    <div class="error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">Not an email.</div>
+    <br>
+    <label>password</label>
+    <br>
+    <input type="password" ng-model="authPassword" size="30" placeholder="enter user password"/>
+    <br>
+    <br>
+    Stay logged in <input type="checkbox" ng-model="cookieLogin" value="cookieLogin">
+    <p id="loginError" ng-show="loginError" class="bg-danger">Authentication failed please try again.</p>
+    <input id="loginButton" type="submit" value="login" href="#/user/userList" class="btn btn-primary"/>
+</form>

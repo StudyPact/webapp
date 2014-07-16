@@ -40,7 +40,7 @@ function bootApplication(app) {
     app.use(express.cookieParser());
 
     // Serve static files from the /public directory
-    app.use('/', express.static(app_root + '/public'));
+    app.use('/', express.static(app_root + '/webapp'));
 
     app.set('views', './views');
     app.set('view engine', 'jade');
@@ -57,9 +57,17 @@ function bootApplication(app) {
 }
 
 function registerWebappRoutes(app) {
-    app.get("/", function (req, res) {
-        res.render('webapp/index');
-    });
+    function renderWebapp(req, res) {
+        res.render('index', {
+                clientConfig: JSON.stringify({
+                    host: process.env.HOST,
+                    client_id: process.env.CLIENT_ID,
+                    client_secret: process.env.CLIENT_SECRET
+                })
+            }
+        );
+    }
+    app.get("/", renderWebapp);
 }
 
 // allow normal node loading if appropriate

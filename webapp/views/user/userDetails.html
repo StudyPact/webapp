@@ -1,0 +1,35 @@
+<h2>User {{currentUser._id}}</h2>
+<div class="row">
+  <div class="col-md-6">
+    <p>First Name: <input type="text" ng-model="currentUser.displayname.first" size="50" name="currentUser.current_earnings"></p>
+    <p>Last Name: <input type="text" ng-model="currentUser.displayname.last" size="50" name="currentUser.current_earnings"></p>
+    <p>Email: <input type="text" ng-model="currentUser.email" size="50" name="currentUser.email"></p>
+    <p>Old Emails:<div ng-repeat="old_email in currentUser.old_emails | filter:searchByUser">{{old_email}}</div></p>
+    <p>Paypal Email: <input type="text" ng-model="currentUser.paypal_email" size="50" name="currentUser.paypal_email"></p>
+    <p>Timezone: {{currentUser.timezone}}</p>
+    <p>Payment Status: {{currentUser.payment_status}}</p>
+    <p>Current Earnings: $ {{currentUser.current_earnings}}</p>
+    <p>Total Money: $ {{currentUser.totals.money}}</p>
+    <p>Total Time: {{(currentUser.totals.time/60)| number:2}} h</p>
+    <p>Holyday Mode: 
+      <input type="checkbox" ng-model="currentUser.holiday" value="currentUser.holiday">
+    </p>
+    <p>Payout Request: 
+      <input type="checkbox" ng-model="currentUser.payout_request" value="currentUser.payout_request">
+    </p>
+    <button class="btn btn-primary" type="submit" ng-click="updateUser()">Update User</button>
+    <a class="btn btn-primary" href="#/user/userList">Back</a>
+    <button class="btn btn-danger" type="submit" ng-click="deleteUser(currentUser._id)">DELETE User</button>
+
+  </div>
+  <div class="col-md-6">
+    <h3>Pacts</h3>
+    <ul>
+      <li ng-repeat="pact in user_pacts">
+          <a href="#/pact/{{pact._id}}">
+              {{pact.calendar_year}} - {{pact.calendar_week}} - {{pact.status}}
+          </a>
+      </li>
+    </ul>
+  </div>  
+</div>
