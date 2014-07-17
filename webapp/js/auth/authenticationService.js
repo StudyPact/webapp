@@ -23,7 +23,7 @@ angular.module('authenticationModule.services', []).factory('authenticationServi
                 grant_type: "password",
                 client_id: clientConfig.client_id,
                 client_secret: clientConfig.client_secret,
-                scope: "admin",
+                scope: "user",
                 username: authEmail,
                 password: authPassword
             };
