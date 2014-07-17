@@ -21,6 +21,7 @@ module.controller("UserDetailsController", ["$scope", "$resource", "$routeParams
         alert(err.data);
     };
     $scope.currentUser = {};
+    $scope.newUser = {};
     $scope.user_pacts = {};
 
     $scope.updateUser = function () {
@@ -33,7 +34,7 @@ module.controller("UserDetailsController", ["$scope", "$resource", "$routeParams
             holiday: $scope.currentUser.holiday,
             payout_request: $scope.currentUser.payout_request
         }
-        var User = $resource(host + '/api/users/:userId', null, {"update": { method: "PUT" }});
+        var User = $resource(host + '/api/users/me', null, {"update": { method: "PUT" }});
         User.update({userId: $scope.currentUser._id}, updatedUser,
         function(result){
             init();
@@ -41,36 +42,29 @@ module.controller("UserDetailsController", ["$scope", "$resource", "$routeParams
         error_handler);
     };
 
-    var load_user_pacs = function(user_id){
-        var pact_query = $resource(host + '/api/pacts');
-        pact_query.query({owner: user_id},function (result) {
-            $scope.user_pacts = result;
-        });
-    }
-    var init = function () {
-        if($routeParams.userId){
-            var id = $routeParams.userId;
-            $scope.currentUser = $resource(host + '/api/users/:userId', {userId: '@id'}).get({userId: id});
-        } else if($routeParams.userEmail){
-            var email = $routeParams.userEmail;
-            var Users = $resource(host + '/api/users');
-            var users = Users.query({email:email}, function () {
-                $scope.currentUser = users[0];
-            });
-        };
-        load_user_pacs($routeParams.userId);
+    $scope.createUser = function () {
+        var newUser = {
+            email: $scope.newUser.email,
+            password: $scope.newUser.password,
+            displayname: $scope.newUser.displayname,
+        }
+        var User = $resource(host + '/api/users');
+        User.save(newUser, function(result){
+            console.log("CREATED");
+        }, 
+        error_handler);
+    };
+
+    $scope.loadUser = function () {
+        $scope.currentUser = $resource(host + '/api/users/me').get();
     };
     $scope.deleteUser = function(id) {
         var deleteUserDialog = $window.confirm('DELETE user with email: '+$scope.currentUser.email);   
 
         if (deleteUserDialog) {
-            $resource(host + '/api/users/:userId').delete({userId: id}, function(){
+            $resource(host + '/api/users/me').delete(function(){
                 console.log("DELETED");
-                init();
             });
-
         }
     }
-            
-    init();
 }]);

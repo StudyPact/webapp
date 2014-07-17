@@ -1,4 +1,4 @@
-<nav ng-app="authenticationModule" ng-controller="LoginController" ng-show="loggedIn" id="navBar" class="navbar navbar-default" role="navigation">
+<nav ng-app="authenticationModule" ng-controller="LoginController" id="navBar" class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -6,28 +6,16 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">User<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#/user/userList">List Users</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Pacts<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/pact/pactList">List Pacts</a></li>
+                        <li><a href="#/login">Login</a></li>
+                        <li><a href="#/user/new">Create New User</a></li>
+                        <li><a href="#/user/me">Current User</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">Studyapps<b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                        <li><a href="#/studyapp/addStudyapp">Create New Study App</a></li>
                         <li><a href="#/studyapp/studyappList">List Study Apps</a></li>
-                        <li><a href="#/studyapp/addStudyapp">Add Study App</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Graphs<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/statistics/userSignups">User Signups</a></li>
-                        <li><a href="#/statistics/moneyStats">Monthly Revenue Breakdown</a></li>
-                        <li><a href="#/statistics/dailyStudyTime">Daily Study Time</a></li>
                     </ul>
                 </li>
             </ul>

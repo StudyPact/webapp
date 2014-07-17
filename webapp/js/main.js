@@ -14,8 +14,12 @@ app.config(["$routeProvider",
                     templateUrl: "/views/login/login.html",
                     controller: "LoginController"
                 })
-                .when("/user/:userId", {
+                .when("/user/me", {
                     templateUrl: "/views/user/userDetails.html",
+                    controller: "UserDetailsController"
+                })
+                .when("/user/new", {
+                    templateUrl: "/views/user/userNew.html",
                     controller: "UserDetailsController"
                 })
                .otherwise({
@@ -26,7 +30,7 @@ app.config(["$routeProvider",
 
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
 
-            if (!authenticationService.getAccessToken()) {
+            /*if (!authenticationService.getAccessToken()) {
                 if (next.templateUrl == "/views/login/login.html") {
                     // already going to login, no redirect needed
                 } else {
@@ -36,6 +40,6 @@ app.config(["$routeProvider",
                 if (next.templateUrl == "/views/login/login.html") {
                     $location.path("/user/userList");
                 }
-            }
+            }*/
         });
     })
