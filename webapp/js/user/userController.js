@@ -13,7 +13,7 @@ module.controller("UserController", ["$scope","$resource", function ($scope, $re
     };
 }]);
 
-module.controller("UserDetailsController", ["$scope", "$resource", "$routeParams","$window", function ($scope, $resource, $routeParams, $window) {
+module.controller("UserDetailsController", ["$scope", "$location", "$resource", "$routeParams","$window", function ($scope, $location, $resource, $routeParams, $window) {
     var host = clientConfig.host;
 
     var error_handler = function(err){
@@ -37,7 +37,7 @@ module.controller("UserDetailsController", ["$scope", "$resource", "$routeParams
         var User = $resource(host + '/api/users/me', null, {"update": { method: "PUT" }});
         User.update({userId: $scope.currentUser._id}, updatedUser,
         function(result){
-            init();
+            $scope.loadUser();
         }, 
         error_handler);
     };
@@ -51,12 +51,17 @@ module.controller("UserDetailsController", ["$scope", "$resource", "$routeParams
         var User = $resource(host + '/api/users');
         User.save(newUser, function(result){
             console.log("CREATED");
+            $location.path("/login");
         }, 
         error_handler);
     };
 
     $scope.loadUser = function () {
-        $scope.currentUser = $resource(host + '/api/users/me').get();
+        $scope.currentUser = $resource(host + '/api/users/me').get(
+            function(result){
+                console.log("LOADED user")
+            },
+            error_handler);
     };
     $scope.deleteUser = function(id) {
         var deleteUserDialog = $window.confirm('DELETE user with email: '+$scope.currentUser.email);   
@@ -64,6 +69,7 @@ module.controller("UserDetailsController", ["$scope", "$resource", "$routeParams
         if (deleteUserDialog) {
             $resource(host + '/api/users/me').delete(function(){
                 console.log("DELETED");
+                $location.path("/user/new");
             });
         }
     }

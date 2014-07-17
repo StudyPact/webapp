@@ -10,7 +10,7 @@ module.controller("LoginController", ["$scope", "$location", "authenticationServ
 
         authenticationService.authenticate(authEmail, authPassword)
             .then(function(accessToken){
-                $location.path("/user/userList");
+                $location.path("/user/me");
             },
             function(error) {
                 //TODO dynamically set error text
