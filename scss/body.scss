@@ -1,0 +1,34 @@
+
+
+body {
+    font-family: 'Lato';
+    font-weight: 100;
+    background-color: #f2f2f2;
+}
+
+
+
+// Uncomment below to have the main content darken when the sidemenu is open
+
+// .snap-content:after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     bottom:0;
+//     left:0;
+//     right:100%;
+//     background-color: rgba(0,0,0,0);
+//     -webkit-transition: background-color .3s ease-in, right .01s ease-in .3s;
+//     transition: background-color .3s ease-in, right .01s ease-in .3s;
+// }
+
+// .snapjs-left,
+// .snapjs-right {
+//     .snap-content:after {
+//         right:0;
+//         background-color: rgba(0,0,0,0.5);
+
+//         -webkit-transition: background-color .3s ease-out;
+//         transition: background-color .3s ease-out;
+//     }
+// }
