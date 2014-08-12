@@ -5,7 +5,9 @@
 }
 
 .main__content {
-    padding: 5px;
+    .row, .col-sm-6 {
+        padding: 8px;
+    }
 }
 
 .sidemenu__content {
