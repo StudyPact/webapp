@@ -1,1 +1,6 @@
+.DS_Store
+node_modules
+dist
+*.sublime*
+bower_components
 workshop

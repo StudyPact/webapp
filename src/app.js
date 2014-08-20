@@ -2,7 +2,6 @@
 
 angular.module('studypact', [
     'snap',
-    'constants',
     'templates_lib',
     'templates'
 ])
