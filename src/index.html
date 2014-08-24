@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Studypact</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400&amp;subset=latin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400&amp;subset=latin">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- include: "type": "css", "files": "./**/*.css" -->
 
@@ -32,18 +32,13 @@
                 <i class="fa fa-bars"></i>
             </div>
         </div>
-        <div class="main__content container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="sp-box">
-                        Test
-                    </div>
-                </div>
-            </div>
+        <div class="main__content">
+            <div ui-view autoscroll="false"></div>
         </div>
     </snap-content>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular@@minified.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router@@minified.js"></script>
 
     @@libScripts
 

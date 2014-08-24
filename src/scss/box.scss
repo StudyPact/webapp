@@ -9,12 +9,14 @@
 }
 
 .sp-box--fixed-height {
-    @extend .sp-box;
     height: 150px;
 }
 
+.sp-box--center {
+    text-align: center;
+}
+
 .sp-box--header {
-    @extend .sp-box;
     background-color: #4cbef4;
     height: 37px;
     color: white;
