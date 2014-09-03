@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400&amp;subset=latin">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- include: "type": "css", "files": "./**/*.css" -->
+    <!-- autoInclude: css !-->
 
 </head>
 <body ng-controller="MainController">
@@ -37,12 +37,11 @@
         </div>
     </snap-content>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular@@minified.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router@@minified.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
 
-    @@libScripts
+    <!-- autoInclude: jsLib !-->
+    <!-- autoInclude: jsApp !-->
 
-    <!-- include: "type": "js", "files": ["./assets/js/templates/**/*.js"] -->
-    <!-- include: "type": "js", "files": ["./assets/js/app/**/*.js"] -->
 </body>
 </html>

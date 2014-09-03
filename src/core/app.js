@@ -3,8 +3,8 @@
 angular.module('studypact', [
     'ui.router',
     'snap',
-    'templates_lib',
-    'templates'
+    // 'angus.templates.lib',
+    'angus.templates.app'
 ])
 .controller('MainController', function ($rootScope, userService) {
 

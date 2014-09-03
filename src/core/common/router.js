@@ -12,12 +12,12 @@ angular.module('studypact')
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'core/home/home.tpl.html',
+                templateUrl: 'home/home.tpl.html',
                 controller: 'HomeController'
             })
             .state('login', {
                 url: '/login',
-                templateUrl: 'core/login/login.tpl.html',
+                templateUrl: 'login/login.tpl.html',
                 controller: 'LoginController'
             });
 
@@ -25,7 +25,7 @@ angular.module('studypact')
     })
     .run(function ($rootScope, $location, $window) {
 
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+        $rootScope.$on('$locationChangeStart', function () {
             if (!$rootScope.auth) {
                 // no logged user, we should be going to #login
                 if ($window.location.pathname !== '/login') {

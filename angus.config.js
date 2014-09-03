@@ -70,6 +70,8 @@ module.exports = {
         }
     },
 
+    cssCompiler: 'sass',
+
     usesAngularJS: true,
 
     testRunner: 'none',
