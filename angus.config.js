@@ -15,7 +15,7 @@ module.exports = {
 
             scss: [
 
-                'angular-snap/angular-snap.scss',
+                'angular-snap/angular-snap.css',
 
                 // Core variables and mixins
                 'bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss',
