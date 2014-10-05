@@ -11,5 +11,10 @@
 @import "profile";
 @import "box";
 
+@import "modal";
+
 // Components
-@import "../core/login/login";
+@import "../core/welcome/welcome";
+
+@import "../core/welcome/modals/login.tpl";
+@import "../core/welcome/modals/signup.tpl";

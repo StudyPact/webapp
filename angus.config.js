@@ -5,12 +5,27 @@ module.exports = {
     bower: {
         packages: [
             'bootstrap-sass-official',
+            'angular-ui=git@github.com:angular-ui/bootstrap.git',
             'angular-snap'
         ],
         filesNeeded: {
             js: [
                 'snapjs/snap.js',
-                'angular-snap/angular-snap.js'
+                'angular-snap/angular-snap.js',
+
+                'angular-ui/src/transition/transition.js',
+                'angular-ui/src/modal/modal.js'
+            ],
+
+            html: [
+                {
+                    libPath: 'angular-ui/template/modal/backdrop.html',
+                    readAs: 'template/modal/backdrop.html'
+                },
+                {
+                    libPath: 'angular-ui/template/modal/window.html',
+                    readAs: 'template/modal/window.html'
+                },
             ],
 
             scss: [
@@ -58,7 +73,7 @@ module.exports = {
                 // 'bootstrap-sass-official/assets/stylesheets/bootstrap/_close.scss',
 
                 // Components w/ JavaScript
-                // 'bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss'
+                'bootstrap-sass-official/assets/stylesheets/bootstrap/_modals.scss'
                 // 'bootstrap-sass-official/assets/stylesheets/bootstrap/_tooltip.scss',
                 // 'bootstrap-sass-official/assets/stylesheets/bootstrap/_popovers.scss',
                 // 'bootstrap-sass-official/assets/stylesheets/bootstrap/_carousel.scss',

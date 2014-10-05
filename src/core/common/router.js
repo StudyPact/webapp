@@ -15,10 +15,10 @@ angular.module('studypact')
                 templateUrl: 'home/home.tpl.html',
                 controller: 'HomeController'
             })
-            .state('login', {
-                url: '/login',
-                templateUrl: 'login/login.tpl.html',
-                controller: 'LoginController'
+            .state('welcome', {
+                url: '/welcome',
+                templateUrl: 'welcome/welcome.tpl.html',
+                controller: 'WelcomeController'
             });
 
 
@@ -28,8 +28,8 @@ angular.module('studypact')
         $rootScope.$on('$locationChangeStart', function () {
             if (!$rootScope.auth) {
                 // no logged user, we should be going to #login
-                if ($window.location.pathname !== '/login') {
-                    $location.path('/login');
+                if ($window.location.pathname !== '/welcome') {
+                    $location.path('/welcome');
                 }
             }
         });
