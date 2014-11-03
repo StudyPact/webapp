@@ -1,0 +1,16 @@
+{
+  "name": "stuypact",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+  },
+  "dependencies": {
+    "express" : "3.x"
+  },
+  "devDependencies": {
+    "grunt": "0.4.2",
+    "grunt-concurrent": "0.5.0",
+    "grunt-contrib-less": "0.11.1",
+    "grunt-contrib-watch": "0.6.1"
+  }
+}

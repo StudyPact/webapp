@@ -1,0 +1,256 @@
+
+.sp-box {
+  .box-shadow();
+  background-color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 14px;
+}
+
+.sp-box--fixed-height {
+  height: 150px;
+}
+
+.sp-box--center {
+  text-align: center;
+}
+
+.sp-box--header {
+  background-color: #4cbef4;
+  height: 37px;
+  color: white;
+  position: relative;
+
+  padding-top: 8px;
+
+  a {
+    color: white;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding-right: 11px;
+    float: left;
+  }
+
+  .spacer {
+    padding-left: 30px;
+  }
+}
+
+.sp-box--header__progress {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #38b5eb;
+}
+
+.sp-box--header__progress__fill {
+  width: 25%;
+  height: 2px;
+  background-color: white;
+}
+
+.sp-box__header__icon {
+  font-size: 20px;
+  color: #24aadf;
+  display: inline;
+  padding-top: 2px;
+  padding-right: 8px;
+}
+
+.sp-box__header__title {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.sp-box__header__subtitle {
+  font-weight: 100;
+  font-size: 15px;
+  position: absolute;
+  top: 28px;
+  left: 45px;
+}
+
+.sp-box__header__studyinfo {
+  margin-left: 10px;
+  font-weight: 300;
+  display: inline;
+  .highlight {
+    display: inline;
+    color: #3ba2df;
+  }
+}
+
+.sp-box__header__edit {
+  float:right;
+  font-size: 20px;
+  font-weight: 300;
+  .fa {
+    font-weight: 100;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+}
+
+.sp-box__body__time {
+  font-weight: 100;
+  font-size: 80px;
+  word-spacing: 30px;
+  width: 100%;
+  text-align: right;
+  line-height: 80px;
+}
+
+.sp-box__body--time {
+  padding-left:20px;
+  padding-right:20px;
+  color: #3ba2df;
+}
+
+.sp-box__body--due {
+  padding-left:30px;
+  padding-top: 20px;
+  font-weight: 300;
+  font-size: 35px;
+  .active {
+    color: #3ba2df;
+  }
+}
+
+.sp-box__body--due__goto {
+  width: 100%;
+  text-align: right;
+  margin-top: 18px;
+  font-size: 17px;
+  font-weight: 300;
+  img {
+    padding-left: 5px;
+  }
+}
+
+.sp-box__body--top-app {
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.sp-box__body--top-app__app {
+  border-radius: 1px;
+  border: 1px solid black;
+  height: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 300;
+
+  &.active {
+    border: 1px solid #3ba2df;
+    color: #3ba2df;
+  }
+}
+
+.sp-box__body--top-app__app__time {
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+.sp-box__body__time__info {
+  font-weight: 300;
+  font-size: 15px;
+  word-spacing: 40px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.sp-box__body {
+  margin-top: 10px;
+}
+
+.sp-box__body__progress {
+  background-color: #f2f2f2;
+  height: 60px;
+  width: 100%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.sp-box__body__progress--small {
+  .sp-box__body__progress();
+  background-color: transparent;
+  height: 30px;
+}
+
+.sp-box__body__progress--small__fill {
+  .sp-box__body__progress();
+  background-color: #e6e6e6;
+  height: 30px;
+  position: relative;
+  &.active {
+    background-color: #4cbef4;
+  }
+}
+
+.sp-box__body__progress--small__fill__text {
+  position: absolute;
+  right: -40px;
+  top: 5px;
+}
+
+.sp-box__body__progress--small__info {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sp-box__body__progress--small__wrapper {
+  color: #cecece;
+  margin-top: 0px;
+  &.active {
+    margin-top: 20px;
+    color: #4cbef4;
+  }
+}
+
+.sp-box__body__progress__fill {
+  background-color: #4cbef4;
+  height: 60px;
+  width: 25%;
+  color: white;
+  padding: 8px;
+  position: absolute;
+}
+
+.sp-box__body__progress__fill__title {
+  line-height: 10px;
+  font-weight: 300;
+}
+
+.sp-box__body__progress__fill__subtitle {
+  font-size: 30px;
+}
+
+.sp-box__body__progress__title {
+  padding-top: 8px;
+  line-height: 10px;
+  font-weight: 300;
+}
+
+.sp-box__body__progress__subtitle {
+  font-size: 30px;
+}
+
+.sp-box__body__info {
+  margin-top: 10px;
+  text-align: right;
+  font-weight: 300;
+}

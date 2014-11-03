@@ -4,3 +4,4 @@ dist
 *.sublime*
 bower_components
 workshop
+.idea

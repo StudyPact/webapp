@@ -1,10 +1,7 @@
 'use strict';
 
 angular.module('studypact', [
-    'ui.router',
-    'snap',
-    // 'angus.templates.lib',
-    'angus.templates.app'
+    'ui.router'
 ])
 .controller('MainController', function ($rootScope, userService) {
 
