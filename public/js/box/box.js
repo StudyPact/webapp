@@ -7,7 +7,6 @@ angular.module('studypact')
 
             };
 
-
             return Box;
         }
     ]);
