@@ -1,57 +1,64 @@
 'use strict';
 
-var app = angular.module("app", [
+var app = angular.module("studypact", [
     "ui.router",
-    "userModule",
     "authenticationModule",
     "authenticationModule.services",
-    "pactModule",
-    "studyappModule",
-    "statisticsModule",
-    "growthModule",
 ]);
 
 // app.js
 app.config(function($stateProvider, $urlRouterProvider) {
     console.log("config");
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/info');
 
     $stateProvider
-        .state("login", {
-            url: "/login",
-            templateUrl: "/admin/views/login/login.html",
-            controller: "LoginController"
-        })
-        .state("loggedin", {
+        .state("main", {
             views: {
                 // the main template will be placed here (relatively named)
                 '': {
-                    templateUrl: "/admin/views/layout/loggedin.html"
+                    templateUrl: "/templates/layout/layout.html"
                 },
                 // the child views will be defined here (absolutely named)
-                'navbar@loggedin': {
-                    templateUrl: "/admin/views/nav/navbar.html"
+                'navbar@main': {
+                    templateUrl: "/templates/navbar/navbar.html",
+                    controller: "LoginController"
                 }
             }
         })
-        .state("loggedin.userList", {
+        .state("main.loggedOut", {
+            url: "/info",
+            templateUrl: "/templates/info/gettingStarted.html",
+        })
+        .state("main.loggedIn", {
+            views: {
+                // the main template will be placed here (relatively named)
+                '': {
+                    templateUrl: "/templates/layout/loggedIn.html"
+                },
+                // the child views will be defined here (absolutely named)
+                'navbar@loggedIn': {
+                    templateUrl: "/templates/nav/navbar.html"
+                }
+            }
+        })
+        .state("loggedIn.userList", {
             url: "/user/userList",
-            templateUrl: "/admin/views/user/userList.html",
+            templateUrl: "/templates/user/userList.html",
             controller: "UserController"
         })
 })
     .run(function($rootScope, $state, authenticationService) {
         $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
             if (!authenticationService.getAccessToken()) {
-                if (toState.name === "login"){
+                if (toState.name === "loggedOut"){
                     return;
                 }
                 event.preventDefault();
-                $state.go('login');
+                $state.go('loggedOut');
             }  else {
-                if (toState.name === "login"){
+                if (toState.name === "loggedOut"){
                     event.preventDefault();
-                    $state.go('loggedin');
+                    $state.go('loggedIn');
                 }
             }
         });
