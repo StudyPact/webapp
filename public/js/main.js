@@ -10,7 +10,7 @@ var app = angular.module("studypact", [
 app.config(function($stateProvider, $urlRouterProvider) {
     console.log("config");
     $urlRouterProvider.otherwise('/info');
-
+    
     $stateProvider
         .state("main", {
             views: {
@@ -18,10 +18,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: "/templates/layout/layout.html"
                 },
             }
-        })
-        .state("woot", {
-            url:"/woot",
-            templateUrl: "/templates/modals/login.html"
         })
         .state("loggedOut", {
             parent: "main",
@@ -35,16 +31,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             },
             url: "/info",
-        })
-        .state("login", {
-            parent: "loggedOut",
-            url: "/login",
-            templateUrl: "/templates/modals/login.html",
-            //controller: "LoginController",
-            controller: function($scope){
-                $scope.title = 'My Contacts';
-                console.log("LOGIN MODAL LOADED")
-            } 
         })
         .state("loggedIn", {
             parent: "main",
@@ -64,19 +50,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: "UserController"
         })
 })
-    .run(function($rootScope, $state, authenticationService) {
-        $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
-            if (!authenticationService.getAccessToken()) {
-                if (toState.name === "loggedOut"){
-                    return;
-                }
-                event.preventDefault();
-                $state.go('loggedOut');
-            }  else {
-                if (toState.name === "loggedOut"){
-                    event.preventDefault();
-                    $state.go('loggedIn');
-                }
-            }
-        });
-    })
+
