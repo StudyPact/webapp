@@ -19,6 +19,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 },
             }
         })
+        .state("woot", {
+            url:"/woot",
+            templateUrl: "/templates/modals/login.html"
+        })
         .state("loggedOut", {
             parent: "main",
             views: {
@@ -32,8 +36,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
             },
             url: "/info",
         })
+        .state("login", {
+            parent: "loggedOut",
+            url: "/login",
+            templateUrl: "/templates/modals/login.html",
+            //controller: "LoginController",
+            controller: function($scope){
+                $scope.title = 'My Contacts';
+                console.log("LOGIN MODAL LOADED")
+            } 
+        })
         .state("loggedIn", {
             parent: "main",
+            url: "/loggedin",
             views: {
                 '': {
                     templateUrl: "/templates/main/loggedIn.html"

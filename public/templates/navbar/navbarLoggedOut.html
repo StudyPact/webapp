@@ -5,9 +5,10 @@
                 <li><a href="#">StudyPact Logo</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a ng-click="showSignupView()" href="">Signup</a></li>
-                <li><a ng-click="showLoginView()" href="">Login</a></li>
+                <li><a ui-sref="signup">Signup</a></li>
+                <li><a ui-sref=".woot">Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<div ui-view></div>
