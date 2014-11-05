@@ -19,6 +19,7 @@ module.controller("LoginController", ["$scope", "authenticationService", functio
             });
     };
     $scope.logout = function () {
+        console.log("Trying logout")
         authenticationService.logout();
         $scope.go("main.loggedOut");
     };

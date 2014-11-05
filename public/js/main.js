@@ -14,30 +14,32 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state("main", {
             views: {
-                // the main template will be placed here (relatively named)
                 '': {
                     templateUrl: "/templates/layout/layout.html"
                 },
-                // the child views will be defined here (absolutely named)
-                'navbar@main': {
-                    templateUrl: "/templates/navbar/navbar.html",
-                    controller: "LoginController"
-                }
             }
         })
-        .state("main.loggedOut", {
-            url: "/info",
-            templateUrl: "/templates/info/gettingStarted.html",
-        })
-        .state("main.loggedIn", {
+        .state("loggedOut", {
+            parent: "main",
             views: {
-                // the main template will be placed here (relatively named)
                 '': {
-                    templateUrl: "/templates/layout/loggedIn.html"
+                    templateUrl: "/templates/info/gettingStarted.html"
                 },
-                // the child views will be defined here (absolutely named)
-                'navbar@loggedIn': {
-                    templateUrl: "/templates/nav/navbar.html"
+                'navbar': {
+                    templateUrl: "/templates/navbar/navbarLoggedOut.html",
+                    controller: "LoginController"
+                }
+            },
+            url: "/info",
+        })
+        .state("loggedIn", {
+            parent: "main",
+            views: {
+                '': {
+                    templateUrl: "/templates/main/loggedIn.html"
+                },
+                'navbar': {
+                    templateUrl: "/templates/navbar/navbarLoggedIn.html"
                 }
             }
         })
