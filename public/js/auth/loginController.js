@@ -1,6 +1,6 @@
 var module = angular.module("authenticationModule", ["ngResource", "authenticationModule.services"]);
 
-module.controller("LoginController", ["$scope", "authenticationService", function ($scope, authenticationService) {
+module.controller("LoginController", ["$scope", "$state", "authenticationService", function ($scope, $state, authenticationService) {
 
     $scope.login = function () {
         var authEmail = $scope.authEmail;
@@ -9,7 +9,7 @@ module.controller("LoginController", ["$scope", "authenticationService", functio
 
         authenticationService.authenticate(authEmail, authPassword)
             .then(function(accessToken){
-                $scope.go("loggedIn");
+                $state.go("loggedIn");
             },
             function(error) {
                 //TODO dynamically set error text
@@ -20,6 +20,6 @@ module.controller("LoginController", ["$scope", "authenticationService", functio
     $scope.logout = function () {
         console.log("Trying logout")
         authenticationService.logout();
-        $scope.go("loggedOut");
+        $state.go("loggedOut");
     };
 }]);
