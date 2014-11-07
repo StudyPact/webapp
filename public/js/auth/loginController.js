@@ -5,12 +5,11 @@ module.controller("LoginController", ["$scope", "authenticationService", functio
     $scope.login = function () {
         var authEmail = $scope.authEmail;
         var authPassword = $scope.authPassword;
-
         authenticationService.setCookieLogin($scope.cookieLogin);
 
         authenticationService.authenticate(authEmail, authPassword)
             .then(function(accessToken){
-                $scope.go("main.loggedIn");
+                $scope.go("loggedIn");
             },
             function(error) {
                 //TODO dynamically set error text
@@ -21,6 +20,6 @@ module.controller("LoginController", ["$scope", "authenticationService", functio
     $scope.logout = function () {
         console.log("Trying logout")
         authenticationService.logout();
-        $scope.go("main.loggedOut");
+        $scope.go("loggedOut");
     };
 }]);
