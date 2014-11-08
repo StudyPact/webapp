@@ -8,9 +8,6 @@ var app = angular.module("studypact", [
 
 // app.js
 app.config(function($stateProvider, $urlRouterProvider) {
-    console.log("config");
-    $urlRouterProvider.otherwise('/info');
-    
     $stateProvider
         .state("main", {
             views: {
@@ -51,3 +48,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
 })
 
+app.run(function (authenticationService) {
+  authenticationService.init();
+});
