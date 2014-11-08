@@ -46,7 +46,7 @@ module.controller("UserDetailsController", ["$scope", "$location", "$resource", 
         var newUser = {
             email: $scope.newUser.email,
             password: $scope.newUser.password,
-            displayname: $scope.newUser.displayname,
+            displayname: $scope.newUser.displayname
         }
         var User = $resource(host + '/api/users');
         User.save(newUser, function(result){

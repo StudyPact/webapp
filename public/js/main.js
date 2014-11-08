@@ -2,8 +2,10 @@
 
 var app = angular.module("studypact", [
     "ui.router",
+    "restModule",
+    "restModule.services",
     "authenticationModule",
-    "authenticationModule.services",
+    "authenticationModule.services"
 ]);
 
 // app.js
@@ -13,7 +15,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             views: {
                 '': {
                     templateUrl: "/templates/layout/layout.html"
-                },
+                }
             }
         })
         .state("loggedOut", {
@@ -27,7 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     controller: "LoginController"
                 }
             },
-            url: "/info",
+            url: "/info"
         })
         .state("loggedIn", {
             parent: "main",

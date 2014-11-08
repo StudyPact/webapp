@@ -1,4 +1,4 @@
-<nav ng-app="authenticationModule" ng-controller="LoginController" id="navBar" class="navbar navbar-default" role="navigation">
+<nav ng-app="authenticationModule" id="navBar" class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -12,7 +12,7 @@
     </div>
 </nav>
 
-<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div ng-controller="LoginController" class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<div class="modal fade in" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div ng-controller="SignupController" class="modal fade in" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -52,9 +52,9 @@
         <h3>Signup for StudyPact</h3>
       </div>
       <div class="modal-body">
-        <form method="post" action='' name="signupForm">
-          <p><input type="email" required class="span3" name="eid" id="email" placeholder="Email"></p>
-          <p><input type="password" required class="span3" name="passwd" placeholder="Password"></p>
+        <form method="post" name="signupForm" ng-submit="signup()">
+          <p><input type="email" ng-model="email" required class="span3" name="eid" id="email" placeholder="Email"></p>
+          <p><input type="password" ng-model="password" required class="span3" name="passwd" placeholder="Password"></p>
           <p><button type="submit" class="btn btn-primary">Login</button>
             <a href="#">Forgot Password?</a>
           </p>
