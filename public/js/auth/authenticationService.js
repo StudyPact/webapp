@@ -29,14 +29,14 @@ angular.module('authenticationModule.services', []).factory('authenticationServi
                 setCookieLogin: function(value) {
                     cookieLogin = value;
                 },
-                authenticate: function(authEmail, authPassword) {
+                login: function(user) {
                     var request_data = {
                         grant_type: "password",
                         client_id: clientConfig.client_id,
                         client_secret: clientConfig.client_secret,
                         scope: "user",
-                        username: authEmail,
-                        password: authPassword
+                        username: user.email,
+                        password: user.password
                     };
                     return $http.post(authUrl, request_data)
                         .success(function(data) {

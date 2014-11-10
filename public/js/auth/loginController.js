@@ -3,11 +3,9 @@ var module = angular.module("authenticationModule", ["ngResource", "authenticati
 module.controller("LoginController", ["$scope", "$state", "authenticationService", function ($scope, $state, authenticationService) {
 
     $scope.login = function () {
-        var authEmail = $scope.email;
-        var authPassword = $scope.password;
         authenticationService.setCookieLogin($scope.cookieLogin);
 
-        authenticationService.authenticate(authEmail, authPassword)
+        authenticationService.login($scope.user)
             .then(function(accessToken){
                 $state.go("loggedIn");
             },

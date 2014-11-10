@@ -23,11 +23,11 @@
 
         <form name="loginForm" ng-init="init()" ng-submit="login()">
           <p>
-            <input type="email" class="form-control" required ng-model="email" class="span3" name="eid" id="email" placeholder="enter user email">
+            <input type="email" class="form-control" required ng-model="user.email" class="span3" name="eid" id="email" placeholder="enter user email">
             <div class="error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">Not an email.</div>
           </p>
           <p>
-            <input type="password" class="form-control" required ng-model="password" class="span3" name="passwd" placeholder="enter user password">
+            <input type="password" class="form-control" required ng-model="user.password" class="span3" name="passwd" placeholder="enter user password">
           </p>
           <br>
             Stay logged in <input type="checkbox" ng-model="cookieLogin" value="cookieLogin">
@@ -55,14 +55,14 @@
         <form method="post" accept-charset="utf-8" class = "form" role="form" name="signupForm" ng-submit="signup()">   
           <div class="row">
           <div class="col-xs-6 col-md-6">
-            <p><input type="text" required name="firstname" value="" class="form-control" ng-model="firstname" placeholder="First Name"  /></p>
+            <p><input type="text" required name="firstname" value="" class="form-control" ng-model="user.displayname.firstname" placeholder="First Name"  /></p>
           </div>
           <div class="col-xs-6 col-md-6">
-            <p><input type="text" required ng-model="lastname" name="lastname" value="" class="form-control" placeholder="Last Name"  /></p>                  
+            <p><input type="text" required ng-model="user.displayname.lastname" name="lastname" value="" class="form-control" placeholder="Last Name"  /></p>                  
           </div>
           </div>
-          <p><input type="email" ng-model="email" required name="email" value="" class="form-control" placeholder="Your Email"  /></p>
-          <p><input type="password" required name="password" value="" class="form-control" placeholder="Password" ng-model="password" /></p>
+          <p><input type="email" ng-model="user.email" required name="email" value="" class="form-control" placeholder="Your Email"  /></p>
+          <p><input type="password" required name="password" value="" class="form-control" placeholder="Password" ng-model="user.password" /></p>
           <p><input type="password" required name="confirm_password" value="" class="form-control" placeholder="Confirm Password"  /></p>
           <br />
           <span class="help-block">By clicking Create my account, you agree to our Terms of Service.

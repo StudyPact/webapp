@@ -1,21 +1,21 @@
-var module = angular.module("restModule", ["ngResource", "restModule.services"]);
+var module = angular.module("restModule", ["ngResource", "restModule.services", "authenticationModule.services"]);
 
-module.controller("SignupController", ["$scope", "$state", "userService", function ($scope, $state, userService) {
+module.controller("SignupController", ["$scope", "$state", "userService","authenticationService", function ($scope, $state, userService, authenticationService) {
 
     $scope.signup = function () {
 
-        var user = {
-            email: $scope.email,
-            password: $scope.password,
-            displayname: {
-                first: $scope.firstname,
-                last: $scope.lastname
-            },
-        }
-
-        userService.createUser(user)
+        userService.createUser($scope.user)
             .then(function(response){
-                console.log(response)
+                console.log("Registered new user:", response);
+                authenticationService.login($scope.user)
+                .then(function(accessToken){
+                    $state.go("loggedIn");
+                },
+                function(error) {
+                    //TODO dynamically set error text
+                    console.log(error);
+                    $scope.loginError = true;
+                });
             },
             function(error) {
                 console.log(error);
