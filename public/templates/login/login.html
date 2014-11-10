@@ -1,0 +1,31 @@
+<div ng-controller="LoginController" class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">x</button>
+                <h3>Login to StudyPact</h3>
+            </div>
+            <div class="modal-body">
+
+                <form name="loginForm" ng-init="init()" ng-submit="login()">
+                    <p>
+                        <input type="email" class="form-control" required ng-model="user.email" class="span3" name="eid" id="email" placeholder="enter user email">
+                    <div class="error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">Not an email.</div>
+                    </p>
+                    <p>
+                        <input type="password" class="form-control" required ng-model="user.password" class="span3" name="passwd" placeholder="enter user password">
+                    </p>
+                    <br>
+                    Stay logged in <input type="checkbox" ng-model="cookieLogin" value="cookieLogin">
+                    <p><button type="submit" class="btn btn-primary">Login</button>
+                        <a href="#">Forgot Password?</a>
+                    </p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                New To StudyPact?
+                <button type="button" data-dismiss="modal" class="btn btn-sm" data-toggle="modal" data-target="#signupModal">Signup</button>
+            </div>
+        </div>
+    </div>
+</div>
