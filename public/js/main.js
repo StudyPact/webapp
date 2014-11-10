@@ -43,10 +43,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state("loggedIn.userList", {
-            url: "/user/userList",
-            templateUrl: "/templates/user/userList.html",
-            controller: "UserController"
+        .state("userProfile", {
+            parent: "loggedIn",
+            url: "/profile",
+            templateUrl: "/templates/user/profile.html",
+            controller: "ProfileController"
         })
 })
 
