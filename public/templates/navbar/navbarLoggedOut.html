@@ -23,11 +23,11 @@
 
         <form name="loginForm" ng-init="init()" ng-submit="login()">
           <p>
-            <input type="email" required ng-model="authEmail" class="span3" name="eid" id="email" placeholder="enter user email">
+            <input type="email" class="form-control" required ng-model="authEmail" class="span3" name="eid" id="email" placeholder="enter user email">
             <div class="error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">Not an email.</div>
           </p>
           <p>
-            <input type="password" required ng-model="authPassword" class="span3" name="passwd" placeholder="enter user password">
+            <input type="password" class="form-control" required ng-model="authPassword" class="span3" name="passwd" placeholder="enter user password">
           </p>
           <br>
             Stay logged in <input type="checkbox" ng-model="cookieLogin" value="cookieLogin">
@@ -52,13 +52,24 @@
         <h3>Signup for StudyPact</h3>
       </div>
       <div class="modal-body">
-        <form method="post" action='' name="signupForm">
-          <p><input type="email" required class="span3" name="eid" id="email" placeholder="Email"></p>
-          <p><input type="password" required class="span3" name="passwd" placeholder="Password"></p>
-          <p><button type="submit" class="btn btn-primary">Login</button>
-            <a href="#">Forgot Password?</a>
-          </p>
-        </form>
+        <form action="" method="post" accept-charset="utf-8" class = "form" role="form" name="signupForm">   
+          <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <p><input type="text" required name="firstname" value="" class="form-control" placeholder="First Name"  /></p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p><input type="text" required name="lastname" value="" class="form-control" placeholder="Last Name"  /></p>                  
+          </div>
+          </div>
+          <p><input type="email" required name="email" value="" class="form-control" placeholder="Your Email"  /></p>
+          <p><input type="password" required name="password" value="" class="form-control" placeholder="Password"  /></p>
+          <p><input type="password" required name="confirm_password" value="" class="form-control" placeholder="Confirm Password"  /></p>
+          <br />
+          <span class="help-block">By clicking Create my account, you agree to our Terms of Service.
+          </span>
+          <p><button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Create my account
+          </button></p>
+        </form>    
       </div>
       <div class="modal-footer">
         Already have an account?
