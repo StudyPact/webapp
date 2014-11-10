@@ -1,5 +1,7 @@
-<div ng-init="loadUser()">
+<div ng-init="loadUser()" class="panel">
   <p>Profile: 
+    <span ng-bind="user.displayname.first"></span>
+    <span ng-bind="user.displayname.last"></span>
     <span ng-bind="user.email"></span>
   </p>
 </div>
