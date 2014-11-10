@@ -2,6 +2,7 @@
 
 var app = angular.module("studypact", [
     "ui.router",
+    "directives",
     "restModule",
     "restModule.services",
     "authenticationModule",
@@ -53,3 +54,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.run(function (authenticationService) {
   authenticationService.init();
 });
+

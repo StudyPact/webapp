@@ -52,7 +52,7 @@
         <h3>Signup for StudyPact</h3>
       </div>
       <div class="modal-body">
-        <form method="post" accept-charset="utf-8" class = "form" role="form" name="signupForm" ng-submit="signup()">   
+        <form name="signupForm" ng-submit="signup()">   
           <div class="row">
           <div class="col-xs-6 col-md-6">
             <p><input type="text" required name="firstname" value="" class="form-control" ng-model="user.displayname.firstname" placeholder="First Name"  /></p>
@@ -63,12 +63,13 @@
           </div>
           <p><input type="email" ng-model="user.email" required name="email" value="" class="form-control" placeholder="Your Email"  /></p>
           <p><input type="password" required name="password" value="" class="form-control" placeholder="Password" ng-model="user.password" /></p>
-          <p><input type="password" required name="confirm_password" value="" class="form-control" placeholder="Not in use yet...."  /></p>
+          <p><input type="password" required name="confirm_password" value="" class="form-control" ng-model="confirm_password" pw-check="password" placeholder="Don't know how to get this thing to work"/></p>
           <br />
           <span class="help-block">By clicking Create my account, you agree to our Terms of Service.
           </span>
-          <p><button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Create my account
-          </button></p>
+          <p>
+            <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Create my account</button>
+          </p>
         </form>    
       </div>
       <div class="modal-footer">
