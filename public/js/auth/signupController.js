@@ -6,7 +6,11 @@ module.controller("SignupController", ["$scope", "$state", "userService", functi
 
         var user = {
             email: $scope.email,
-            password: $scope.password
+            password: $scope.password,
+            displayname: {
+                first: $scope.firstname,
+                last: $scope.lastname
+            },
         }
 
         userService.createUser(user)
