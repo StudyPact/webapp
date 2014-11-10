@@ -1,4 +1,4 @@
-angular.module('restModule.services', []).factory('userService', ["$state","$resource", "$rootScope", "$q",
+angular.module('studypact').factory('UserService', ["$state","$resource", "$rootScope", "$q",
   function($state, $resource, $rootScope, $q) {
 
     return {

@@ -1,4 +1,4 @@
-<div ng-init="loadUser()" class="panel">
+<div ng-controller="ProfileController" ng-init="loadUser()" class="panel">
   <p>Profile: 
     <span ng-bind="user.displayname.first"></span>
     <span ng-bind="user.displayname.last"></span>

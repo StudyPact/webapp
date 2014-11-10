@@ -1,6 +1,6 @@
-var module = angular.module("restModule", ["ngResource", "restModule.services", "authenticationModule.services"]);
+var module = angular.module("studypact");
 
-module.controller("SignupController", ["$scope", "$state", "userService","authenticationService", function ($scope, $state, userService, authenticationService) {
+module.controller("SignupController", ["$scope", "$state","UserService","AuthenticationService", function ($scope, $state, userService, authenticationService) {
 
     $scope.signup = function () {
 

@@ -1,4 +1,4 @@
-angular.module('authenticationModule.services', []).factory('authenticationService', ["$state","$http", "$rootScope", "$q",
+angular.module('studypact').factory('AuthenticationService', ["$state","$http", "$rootScope", "$q",
         function($state, $http, $rootScope, $q) {
 
             var authUrl = clientConfig.host + "/oauth/token";
