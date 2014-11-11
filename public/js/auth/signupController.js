@@ -8,7 +8,7 @@ module.controller("SignupController", ["$scope", "$state","UserService","Authent
                 console.log("Registered new user:", response);
                 authenticationService.login($scope.user)
                 .then(function(accessToken){
-                    $state.go("loggedIn");
+                    $state.go("mainBoxView");
                 });
             },
             function(error) {

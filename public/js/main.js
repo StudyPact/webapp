@@ -33,18 +33,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/loggedin",
             views: {
                 '': {
-                    templateUrl: "/templates/main/loggedIn.html"
+                    templateUrl: "/templates/main/main.html"
                 },
                 'navbar': {
                     templateUrl: "/templates/navbar/navbarLoggedIn.html"
                 }
             }
         })
-        .state("userProfile", {
+        .state("mainBoxView", {
             parent: "loggedIn",
-            url: "/profile",
-            templateUrl: "/templates/user/profile.html",
-            controller: "ProfileController"
+            url: "/main",
+            templateUrl: "/templates/main/boxContainer.html",
+            controller: "BoxController"
         })
 })
 

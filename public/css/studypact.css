@@ -6397,7 +6397,17 @@ body {
   background-color: white;
   margin-bottom: 10px;
 }
+#boxContainer {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+}
 .sp-box {
+  float: left;
+  height: 150px;
+  padding: 20px;
+}
+.sp-box-content {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.41);
   -moz-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.41);
   box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.41);
@@ -6406,7 +6416,16 @@ body {
   padding-right: 16px;
   padding-top: 8px;
   padding-bottom: 14px;
+  height: 100%;
+  width: 100%;
 }
+.sp-box-wide {
+  width: 100%;
+}
+.sp-box-medium {
+  width: 50%;
+}
+/**  ---------------- unused -----------------**/
 .sp-box--fixed-height {
   height: 150px;
 }
