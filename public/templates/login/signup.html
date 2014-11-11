@@ -34,16 +34,17 @@
                     </div>
 
                     <!-- EMAIL -->
-                    <div class="form-group" ng-class="{ 'has-error' : submitted &&signupForm.email.$invalid}">
+                    <div class="form-group" ng-class="{ 'has-error' : (submitted &&signupForm.email.$invalid) || error.mailInUseError}">
                         <input type="email" name="email" id="email" class="form-control" ng-model="user.email" ng-required=true placeholder="Email Address" tabindex="3">
                         <p ng-show="submitted && signupForm.email.$invalid" class="help-block">Email is incorrect!</p>
+                        <p ng-show="error.mailInUseError" class="help-block">Email is already registered!</p>
                     </div>
 
                     <!-- PASSWORD -->
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
                             <div class="form-group" ng-class="{ 'has-error' : submitted && signupForm.signupPassword.$invalid}">
-                                <input type="password" id="signupPassword" name="signupPassword" ng-model="user.signupPassword" placeholder="Password" ng-minlength=8 ng-required=true tabindex=4 class="form-control">
+                                <input type="password" id="signupPassword" name="signupPassword" ng-model="user.password" placeholder="Password" ng-minlength=8 ng-required=true tabindex=4 class="form-control">
                                 <p class="help-block" ng-show="submitted && signupForm.signupPassword.$invalid">Password is too short!</p>
                             </div>
                         </div>
@@ -66,12 +67,16 @@
                         </div>
                     </div>
 
+                    <!-- SERVER ERROR -->
+                    <p ng-show="error.serverError" class="bg-danger">Unknown Server Error - please try again later!</p>
+                    
                     <!-- SUBMIT -->
                     <div class="row">
                         <div class="col-xs-12">
                             <input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="6" ng-click="submitted=true">
                         </div>
                     </div>
+
                 </form>
             </div>
             <div class="modal-footer">
