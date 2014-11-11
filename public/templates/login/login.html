@@ -8,18 +8,39 @@
             <div class="modal-body">
 
                 <form name="loginForm" ng-init="init()" ng-submit="login()">
-                    <p>
-                        <input type="email" class="form-control" required ng-model="user.email" class="span3" name="eid" id="email" placeholder="enter user email">
-                    <div class="error" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">Not an email.</div>
-                    </p>
-                    <p>
-                        <input type="password" class="form-control" required ng-model="user.password" class="span3" name="passwd" placeholder="enter user password">
-                    </p>
-                    <br>
-                    Stay logged in <input type="checkbox" ng-model="cookieLogin" value="cookieLogin">
-                    <p><button type="submit" class="btn btn-primary">Login</button>
-                        <a href="#">Forgot Password?</a>
-                    </p>
+
+                    <!-- EMAIL -->
+                    <div class="form-group" >
+                        <input type="email" name="email" id="email" class="form-control" ng-model="user.email" placeholder="Email Address" tabindex="3">
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="form-group" ng-class="{ 'has-error' : submitted && signupForm.password.$invalid}">
+                        <input type="password" id="password" name="password" ng-model="user.password" placeholder="Password" tabindex=4 class="form-control">
+                    </div>
+
+                    <!-- AGGREE -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group" ng-class="{ 'has-error' : submitted && !acceptedTerms}">
+                                <label class="control-label">
+                                    <input type="checkbox" ng-model="cookieLogin" name="terms" id="terms"> Stay logged in
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input type="submit" value="Login" class="btn btn-primary btn-block btn-lg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
