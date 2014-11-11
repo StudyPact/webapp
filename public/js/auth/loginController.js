@@ -2,6 +2,7 @@ var module = angular.module("studypact");
 
 module.controller("LoginController", ["$scope", "$state", "AuthenticationService", function ($scope, $state, authenticationService) {
 
+    $scope.cookieLogin=true;
     $scope.login = function () {
         authenticationService.setCookieLogin($scope.cookieLogin);
 
