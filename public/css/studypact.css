@@ -6399,8 +6399,8 @@ body {
 }
 .sp-box {
   float: left;
-  height: 150px;
-  padding: 20px;
+  height: 200px;
+  padding: 10px;
 }
 .sp-box-content {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.41);
@@ -6413,6 +6413,14 @@ body {
   padding-bottom: 14px;
   height: 100%;
   width: 100%;
+}
+.sp-blue {
+  color: #4cbef4;
+}
+.sp-total-study-time {
+  font-size: 7em;
+  margin: 0;
+  line-height: 1;
 }
 .sp-box-wide {
   width: 100%;
