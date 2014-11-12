@@ -8,7 +8,7 @@ module.controller("LoginController", ["$scope", "$state", "AuthenticationService
 
         authenticationService.login($scope.user)
             .then(function(accessToken){
-                $state.go("main");
+                $state.go("home");
             },
             function(error) {
                 //TODO dynamically set error text

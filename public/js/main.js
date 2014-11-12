@@ -40,11 +40,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state("main", {
+        .state("home", {
             parent: "loggedIn",
-            url: "/main",
-            templateUrl: "/templates/main/boxContainer.html",
-            controller: "BoxController"
+            url: "/home", 
+            views: {
+                '': {
+                    templateUrl: "/templates/layout/cards/boxContainer.html",
+                    controller: "BoxController",
+                },
+                'sidebar': {
+                    templateUrl: "/templates/sidebar/studyActivities.html",
+                    controller: "StudyActivityFeedController"
+                },
+                'profile': {
+                    templateUrl: "/templates/sidebar/profileSummary.html",
+                },
+                'menu': {
+                    templateUrl: "/templates/menu/mainMenu.html",
+                }
+            }
         })
 })
 
