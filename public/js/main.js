@@ -8,7 +8,7 @@ var app = angular.module("studypact", [
 // app.js
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state("main", {
+        .state("layout", {
             views: {
                 '': {
                     templateUrl: "/templates/layout/layout.html"
@@ -16,31 +16,31 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
         .state("loggedOut", {
-            parent: "main",
+            parent: "layout",
             views: {
                 '': {
                     templateUrl: "/templates/info/gettingStarted.html"
                 },
                 'navbar': {
-                    templateUrl: "/templates/navbar/navbarLoggedOut.html",
+                    templateUrl: "/templates/navbar/loggedOutNavbar.html",
                     controller: "LoginController"
                 }
             },
             url: "/info"
         })
         .state("loggedIn", {
-            parent: "main",
-            url: "/loggedin",
+            parent: "layout",
             views: {
                 '': {
-                    templateUrl: "/templates/main/main.html"
+                    templateUrl: "/templates/layout/loggedInContentLayout.html"
                 },
                 'navbar': {
-                    templateUrl: "/templates/navbar/navbarLoggedIn.html"
+                    templateUrl: "/templates/navbar/loggedInNavbar.html",
+                    controller: "LoginController"
                 }
             }
         })
-        .state("mainBoxView", {
+        .state("main", {
             parent: "loggedIn",
             url: "/main",
             templateUrl: "/templates/main/boxContainer.html",

@@ -18,7 +18,7 @@ angular.module('studypact').factory('AuthenticationService', ["$state","$http", 
                         console.log("Logged in!");
                         $rootScope.loggedIn = true;
                         setAccessToken(accessToken);
-                        $state.go("mainBoxView");
+                        $state.go("main");
 
                     } else {
                         console.log("Logged Out!");
