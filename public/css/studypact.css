@@ -6422,6 +6422,12 @@ body {
   margin: 0;
   line-height: 1;
 }
+.sp-progress-time {
+  font-size: 6em;
+  margin: 0;
+  line-height: 1;
+  margin-top: -10px;
+}
 .sp-box-wide {
   width: 100%;
 }
