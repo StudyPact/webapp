@@ -1,32 +1,24 @@
 var path = require('path');
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     "use strict";
 
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-watch");
-    grunt.loadNpmTasks("grunt-concurrent");
+    grunt.loadNpmTasks('grunt-include-source');
 
     grunt.initConfig({
-
-        concurrent: {
-            server: ['watch:less'],
-            options: {
-                logConcurrentOutput: true
-            }
-        },
 
         watch: {
             less: {
                 files: ['public/assets/css/*.less'],
-                tasks: ['less:studypact'],
-                options: {
-                    livereload: true,
-                    forever: false
-                }
+                tasks: ['less:studypact']
+            },
+            includeSource: {
+                files: ['public/index.tpl.html'],
+                tasks: ['includeSource:dev']
             }
         },
-
         less: {
             studypact: {
                 files: {
@@ -34,23 +26,26 @@ module.exports = function(grunt) {
                 }
             }
         },
-
-        express: {
+        includeSource: {
             options: {
-                port: 3000,
-                hostname: '*'
+                basePath: 'public',
+                baseUrl: '/',
+                templates: {
+                    html: {
+                        js: '<script src="{filePath}"></script>',
+                        css: '<link rel="stylesheet" type="text/css" href="{filePath}" />'
+                    }
+                }
             },
-            livereload: {
-                /*
-                 options: {
-                 server: 'main.js',
-                 bases: ['public', 'views']
-                 }
-                 */
+            dev: {
+                files: {
+                    'public/index.html': 'public/index.tpl.html'
+                }
             }
         }
     });
-    grunt.registerTask('default', ['run']);
-    grunt.registerTask('run', ['less:studypact']);
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', [ 'less:studypact', 'includeSource:dev']);
+    grunt.registerTask('watch' ['watch'])
 
 };

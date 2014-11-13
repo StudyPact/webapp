@@ -6,3 +6,5 @@ bower_components
 workshop
 .idea
 build
+public/index.html
+public/assets/build/css/*
