@@ -1,11 +1,6 @@
 var module = angular.module("studypact");
 
-module.controller("BoxController", ["$scope", function ($scope) {
-    $scope.activeBoxes = [
-        "/templates/widgets/totalStudyTime.html",
-        "/templates/widgets/profile.html",
-        "/templates/widgets/progress.html",
-        "/templates/widgets/nextWeek.html",
-    ];
-
-}]);
+module.controller("BoxController", function ($scope, $state) {
+    console.log($state);
+    $scope.activeBoxes = $state.current.data.activeBoxes;
+});

@@ -40,13 +40,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state("home", {
+        .state("main", {
             parent: "loggedIn",
-            url: "/home", 
             views: {
                 '': {
-                    templateUrl: "/templates/layout/cards/boxContainer.html",
-                    controller: "BoxController",
+                    templateUrl: "/templates/layout/cards/centerLayout.html",
                 },
                 'sidebar': {
                     templateUrl: "/templates/sidebar/studyActivities.html",
@@ -60,8 +58,32 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state("home", {
+            parent: "main",
+            url: "/home",
+            data: {
+                activeBoxes: [
+                    "/templates/widgets/totalStudyTime.html",
+                    "/templates/widgets/progress.html",
+                    "/templates/widgets/nextWeek.html",
+                ]
+            },
+            templateUrl: "/templates/layout/cards/boxContainer.html",
+            controller: "BoxController",
+        })
+        .state("settings", {
+            parent: "main",
+            url: "/settings",
+            data: {
+                activeBoxes: [
+                    "/templates/widgets/profile.html",
+                ]
+            },
+            templateUrl: "/templates/layout/cards/boxContainer.html",
+            controller: "BoxController",
+        })
 })
 
-app.run(function (AuthenticationService) {
-  AuthenticationService.init();
+app.run(function(AuthenticationService) {
+    AuthenticationService.init();
 });
