@@ -14,9 +14,16 @@ module.exports = function (grunt) {
                 files: ['public/assets/css/*.less'],
                 tasks: ['less:studypact']
             },
-            includeSource: {
+            includeSourceTemplate: {
                 files: ['public/index.tpl.html'],
                 tasks: ['includeSource:dev']
+            },
+            includeSourceJS: {
+                files: ['public/app/**/*.js'],
+                tasks: ['includeSource:dev'],
+                options: {
+                    event: ['added', 'deleted']
+                }
             }
         },
         less: {
