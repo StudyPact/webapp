@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 
         watch: {
             less: {
-                files: ['public/assets/less/*.less'],
+                files: ['public/assets/css/*.less'],
                 tasks: ['less:studypact'],
                 options: {
                     livereload: true,
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         less: {
             studypact: {
                 files: {
-                    "public/assets/css/studypact.css": "public/assets/less/studypact.less"
+                    "public/assets/build/css/studypact.css": "public/assets/css/studypact.less"
                 }
             }
         },
