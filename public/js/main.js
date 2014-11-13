@@ -63,8 +63,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/home",
             data: {
                 activeBoxes: [
-                    "/templates/widgets/totalStudyTime.html",
                     "/templates/widgets/progress.html",
+                    "/templates/widgets/totalStudyTime.html",
                     "/templates/widgets/nextWeek.html",
                 ]
             },
