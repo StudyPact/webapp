@@ -76,6 +76,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/settings",
             data: {
                 activeBoxes: [
+                    "/templates/widgets/holiday.html",
                     "/templates/widgets/profile.html",
                 ]
             },
