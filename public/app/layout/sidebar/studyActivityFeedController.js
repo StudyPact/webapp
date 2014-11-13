@@ -1,22 +1,21 @@
 var module = angular.module("studypact");
 
-module.controller("StudyActivityFeedController", ["$scope", function ($scope) {
-    $scope.studySessions = [
-        {
-          studyapp:"0921831SAD",
-          start: new Date (new Date().getTime()-5*60*1000),
-          end: new Date (new Date().getTime()-1*60*1000)
-        },
-        {
-          studyapp:"0921831SAD",
-          start: new Date (new Date().getTime()-500*60*1000),
-          end: new Date (new Date().getTime()-490*60*1000)
-        },
-        {
-          studyapp:"0921831SAD",
-          start: new Date (new Date().getTime()-10055*60*1000),
-          end: new Date (new Date().getTime()-10000*60*1000)
-        },
-    ];
+module.controller("StudyActivityFeedController", function ($scope, $resource) {
+  var host = clientConfig.host;
 
-}]);
+  var error_handler = function(err) {
+    console.error(err);
+    alert(err.data);
+  };
+
+  $scope.loadSessions = function() {
+    $scope.studySessions = $resource(host + '/api/studysessions?limit=5').query(
+      function(result) {
+        console.log("LOADED sessions", result);
+      },
+      error_handler);
+  };
+
+  $scope.loadSessions();
+
+});
