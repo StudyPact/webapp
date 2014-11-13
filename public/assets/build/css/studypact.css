@@ -6397,12 +6397,12 @@ body {
   background-color: white;
   margin-bottom: 10px;
 }
-.sp-box {
+.sp-card {
   float: left;
   height: 200px;
   padding: 10px;
 }
-.sp-box-content {
+.sp-card-content {
   -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.41);
   -moz-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.41);
   box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.41);
