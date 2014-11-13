@@ -6428,12 +6428,6 @@ body {
   line-height: 1;
   margin-top: -10px;
 }
-.sp-box-wide {
-  width: 100%;
-}
-.sp-box-medium {
-  width: 50%;
-}
 /**  ---------------- unused -----------------**/
 .sp-box--fixed-height {
   height: 150px;

@@ -1,5 +1,5 @@
 angular.module('studypact')
-    .directive('pwCheck', [function() {
+    .directive('equalityCheck', [function() {
         return {
             require: 'ngModel',
             link: function(scope, elem, attrs, ctrl) {
@@ -7,7 +7,7 @@ angular.module('studypact')
                 elem.add(firstPassword).on('keyup', function() {
                     scope.$apply(function() {
                         var v = elem.val() === $(firstPassword).val();
-                        ctrl.$setValidity('pwmatch', v);
+                        ctrl.$setValidity('equalityCheck', v);
                     });
                 });
             }

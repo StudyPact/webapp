@@ -6,40 +6,34 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>Studypact</title>
         <script type='text/javascript'>
-          var clientConfig = {
-            host: "http://localhost:5000",
-            client_id: "veXkbkG51uMl7v7J",
-            client_secret: "fef2NfqBHYp9fKKdW2hP7eSoPrVIvTZt"
-          };
+          
         </script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400&amp;subset=latin">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/studypact.css" rel="stylesheet">
+        <link href="/assets/css/studypact.css" rel="stylesheet">
         
-        <script src='/libs/jquery-2.1.1.min.js'></script>
-        <script src='/libs/angular.js'></script>
-        <script src='/libs/angular-resource.js'></script>
-        <script src='/libs/angular-ui-router.js'></script>
-        <script src='/libs/bootstrap/modal.js'></script>
+        <script src='/assets/libs/jquery-2.1.1.min.js'></script>
+        <script src='/assets/libs/angular.js'></script>
+        <script src='/assets/libs/angular-resource.js'></script>
+        <script src='/assets/libs/angular-ui-router.js'></script>
+        <script src='/assets/libs/bootstrap/modal.js'></script>
 
-        <script src='/js/main.js'></script>
-        <script src='/js/main/boxController.js'></script>
-        <script src='/js/user/profileController.js'></script>
-        <script src='/js/user/userService.js'></script>
-        <script src='/js/user/studyActivityFeedController.js'></script>
-        <script src='/js/user/holidayController.js'></script>
-
-        <script src='/js/auth/authenticationService.js'></script>
-        <script src='/js/auth/loginController.js'></script>
-        <script src='/js/auth/signupController.js'></script>
-
-        <script src='/js/widgets/totalStudyTimeController.js'></script>
-        <script src='/js/widgets/thisWeekPactController.js'></script>
-
-        <script src='/js/debug/ui-router-debug.js'></script>
-        <script src='/js/directives/passwordCheck.js'></script>
-        <script src='/js/filter/numberFixedLen.js'></script>
-
+        <script src='/app/config.js'></script>
+        <script src='/app/main.js'></script>
+        
+        <script src='/app/common/services/authenticationService.js'></script>
+        <script src='/app/common/services/userService.js'></script>
+        <script src='/app/common/directives/equalityCheck.js'></script>
+        <script src='/app/layout/sidebar/studyActivityFeedController.js'></script>
+        <script src='/app/layout/topNav/signupController.js'></script>
+        <script src='/app/layout/topNav/loginController.js'></script>
+        <script src='/app/components/pact/thisWeekPactController.js'></script>
+        <script src='/app/components/pact/numberFixedLen.js'></script>
+        <script src='/app/components/cardDisplay/cardController.js'></script>
+        <script src='/app/components/settings/holidayController.js'></script>
+        <script src='/app/components/myStudy/profileController.js'></script>
+        <script src='/app/components/myStudy/totalStudyTimeController.js'></script>
+        
     </head>
 
     <body ng-app="studypact">

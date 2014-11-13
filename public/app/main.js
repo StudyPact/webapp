@@ -11,7 +11,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state("layout", {
             views: {
                 '': {
-                    templateUrl: "/templates/layout/layout.html"
+                    templateUrl: "/app/layout/layout.html"
                 }
             }
         })
@@ -19,10 +19,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "layout",
             views: {
                 '': {
-                    templateUrl: "/templates/info/gettingStarted.html"
+                    templateUrl: "/app/components/landingPage/gettingStarted.html"
                 },
                 'navbar': {
-                    templateUrl: "/templates/navbar/loggedOutNavbar.html",
+                    templateUrl: "/app/layout/topNav/loggedOutNavbar.html",
                     controller: "LoginController"
                 }
             },
@@ -32,10 +32,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "layout",
             views: {
                 '': {
-                    templateUrl: "/templates/layout/loggedInContentLayout.html"
+                    templateUrl: "/app/layout/loggedInContentLayout.html"
                 },
                 'navbar': {
-                    templateUrl: "/templates/navbar/loggedInNavbar.html",
+                    templateUrl: "/app/layout/topNav/loggedInNavbar.html",
                     controller: "LoginController"
                 }
             }
@@ -44,44 +44,44 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "loggedIn",
             views: {
                 '': {
-                    templateUrl: "/templates/layout/cards/centerLayout.html",
+                    templateUrl: "/app/components/cardDisplay/cardDisplayLayout.html",
                 },
                 'sidebar': {
-                    templateUrl: "/templates/sidebar/studyActivities.html",
+                    templateUrl: "/app/layout/sidebar/studyActivitiesFeedView.html",
                     controller: "StudyActivityFeedController"
                 },
                 'profile': {
-                    templateUrl: "/templates/sidebar/profileSummary.html",
+                    templateUrl: "/app/layout/sidebar/profileSummaryView.html",
                 },
                 'menu': {
-                    templateUrl: "/templates/menu/mainMenu.html",
+                    templateUrl: "/app/layout/subNav/subNavView.html",
                 }
             }
         })
-        .state("home", {
+        .state("myStudy", {
             parent: "main",
-            url: "/home",
+            url: "/myStudy",
             data: {
                 activeBoxes: [
-                    "/templates/widgets/progress.html",
-                    "/templates/widgets/totalStudyTime.html",
-                    "/templates/widgets/nextWeek.html",
+                    "/app/components/pact/progressView.html",
+                    "/app/components/myStudy/totalStudyTimeView.html",
+                    "/app/components/pact/nextWeekPactView.html",
                 ]
             },
-            templateUrl: "/templates/layout/cards/boxContainer.html",
-            controller: "BoxController",
+            templateUrl: "/app/components/cardDisplay/cardContainerView.html",
+            controller: "CardController",
         })
         .state("settings", {
             parent: "main",
             url: "/settings",
             data: {
                 activeBoxes: [
-                    "/templates/widgets/holiday.html",
-                    "/templates/widgets/profile.html",
+                    "/app/components/settings/holidayView.html",
+                    "/app/components/myStudy/profileView.html",
                 ]
             },
-            templateUrl: "/templates/layout/cards/boxContainer.html",
-            controller: "BoxController",
+            templateUrl: "/app/components/cardDisplay/cardContainerView.html",
+            controller: "CardController",
         })
 })
 
