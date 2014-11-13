@@ -2,7 +2,8 @@
 
 var app = angular.module("studypact", [
     "ui.router",
-    "ngResource"
+    "ngResource",
+    "angularMoment"
 ]);
 
 // app.js

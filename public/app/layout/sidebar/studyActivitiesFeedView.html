@@ -1,6 +1,19 @@
-<div class="sp-card sp-sidebar">
-    <div class="sp-card-content">
-        <p>Activities</p>
-        <p>Lorem Ipsum hulu bulu voodoo fodoo</p>
+<div class="sp-sidebar">
+  <div class="sp-card-content">
+    <h4><i class="fa fa-clock-o"></i> Study Activities</h4>
+    <div id="studyActivityFeed">
+      <div ng-repeat="studySession in studySessions">
+        <div class="row">
+          <br/>
+          <div class="col-xs-1">
+            <h4><i class="fa fa-circle sp-blue"></i></h4>
+          </div>
+          <div class="col-xs-10">
+            <p><strong><span am-time-ago="studySession.end"></span></strong></p>
+            <p>Studied on <strong>{{studySession.studyapp}}</strong></p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
