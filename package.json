@@ -2,8 +2,6 @@
   "name": "stuypact",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-  },
   "dependencies": {
     "express" : "3.x"
   },
@@ -12,5 +10,8 @@
     "grunt-contrib-less": "0.12.0",
     "grunt-contrib-watch": "0.6.1",
     "grunt-include-source": "0.4.2"
+  },
+  "scripts": {
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt heroku"
   }
 }
