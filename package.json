@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express" : "3.x"
-  },
-  "devDependencies": {
+    "express" : "3.x",
     "grunt": "0.4.5",
     "grunt-contrib-less": "0.12.0",
     "grunt-contrib-watch": "0.6.1",
     "grunt-include-source": "0.4.2"
+  },
+  "devDependencies": {
   },
 }
