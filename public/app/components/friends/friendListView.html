@@ -2,14 +2,26 @@
   <div class="sp-card-content">
     <h4><i class="fa fa-clock-o"></i> Friends</h4>
     <div id="friendList">
+      <div ng-repeat="friend in friendRequests">
+        <div class="row">
+          <br/>
+          <div class="col-xs-10">
+            <p><strong>{{friend.displayname.first}} {{friend.displayname.last}}</strong></p>
+          </div>
+          <div class="col-xs-1">
+            <button ng-click="acceptFriendRequest(friend._id)">
+              <i class="fa fa-check sp-blue"></i>
+            </button>
+          </div>
+
+
+        </div>
+      </div>
       <div ng-repeat="friend in friends">
         <div class="row">
           <br/>
-          <div class="col-xs-1">
-            <h4><i class="fa fa-circle sp-blue"></i></h4>
-          </div>
           <div class="col-xs-10">
-            <p><strong>{{friend.displayname.first}}</strong></p>
+            <p><strong>{{friend.displayname.first}} {{friend.displayname.last}}</strong></p>
           </div>
         </div>
       </div>

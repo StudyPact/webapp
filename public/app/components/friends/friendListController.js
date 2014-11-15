@@ -8,14 +8,34 @@ module.controller("FriendListController", function ($scope, $resource) {
     alert(err.data);
   };
 
-  $scope.loadFriends = function() {
-    $scope.friends = $resource(host + '/api/friends').query(
-      function(friends) {
-        console.log("successfully loaded friends!");
+  $scope.loadFriendRequests = function() {
+    $resource(host + '/api/friends?status=pending').query(
+      function(friendRequests) {
+        $scope.friendRequests=friendRequests;
+        console.log("loaded friendRequests:", friendRequests);
+
       },
       error_handler);
   };
 
-  $scope.loadFriends();
+  $scope.loadFriends = function() {
+    $resource(host + '/api/friends?status=confirmed').query(
+      function(friends) {
+        $scope.friends=friends;
+        console.log("loaded friends:", friends);
 
+      },
+      error_handler);
+  };
+
+  $scope.acceptFriendRequest = function (id) {
+      var Friend = $resource(host + '/api/friends/'+id+"/accept");
+      Friend.get({}, function(result){
+          console.log("Accepted Friend:", id);
+      }, 
+      error_handler);
+  };
+
+  $scope.loadFriendRequests();
+  $scope.loadFriends();
 });
