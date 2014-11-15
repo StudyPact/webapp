@@ -21,13 +21,13 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
                             <div class="form-group" ng-class="{ 'has-error' : submitted && signupForm.firstName.$invalid}">
-                                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" tabindex="1" ng-required=true ng-model="user.displayname.firstname">
+                                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" tabindex="1" ng-required=true ng-model="user.displayname.first">
                                 <p ng-show="submitted && signupForm.firstName.$invalid" class="help-block">Please enter a First Name!</p>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <div class="form-group" ng-class="{ 'has-error' : submitted && signupForm.lastName.$invalid}">
-                                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" tabindex="2" ng-required=true ng-model="user.displayname.lastname">
+                                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" tabindex="2" ng-required=true ng-model="user.displayname.last">
                                 <p ng-show="submitted && signupForm.lastName.$invalid" class="help-block">Please enter a Last Name!</p>
                             </div>
                         </div>
