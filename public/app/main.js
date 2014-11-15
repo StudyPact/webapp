@@ -84,6 +84,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "/app/components/cardDisplay/cardContainerView.html",
             controller: "CardController",
         })
+        .state("friends", {
+            parent: "main",
+            url: "/friends",
+            data: {
+                activeBoxes: [
+                    "/app/components/friends/friendsListView.html",
+                    "/app/components/friends/findFriendsView.html",
+                ]
+            },
+            templateUrl: "/app/components/cardDisplay/cardContainerView.html",
+            controller: "CardController",
+        })
 })
 
 app.run(function(AuthenticationService) {
