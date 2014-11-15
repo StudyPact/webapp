@@ -89,7 +89,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/friends",
             data: {
                 activeBoxes: [
-                    "/app/components/friends/friendsListView.html",
+                    "/app/components/friends/friendListView.html",
                     "/app/components/friends/findFriendsView.html",
                 ]
             },
