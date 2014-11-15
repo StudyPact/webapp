@@ -49,7 +49,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 },
                 'sidebar': {
                     templateUrl: "/app/layout/sidebar/studyActivitiesFeedView.html",
-                    controller: "StudyActivityFeedController"
                 },
                 'profile': {
                     templateUrl: "/app/layout/sidebar/profileSummaryView.html",
