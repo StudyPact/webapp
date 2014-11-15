@@ -8,14 +8,23 @@ module.controller("FindFriendsController", function ($scope, $resource) {
     alert(err.data);
   };
 
-  $scope.loadFriends = function() {
-    $scope.friends = $resource(host + '/api/users?fields=_id,displayname,picture').query(
+  $scope.loadUsers = function() {
+    $scope.users = $resource(host + '/api/users?fields=_id,displayname,picture').query(
       function(friends) {
         console.log("successfully loaded friends!");
       },
       error_handler);
   };
 
-  $scope.loadFriends();
+
+  $scope.sendFriendRequest = function (id) {
+      var Friend = $resource(host + '/api/friends/'+id);
+      Friend.save({}, function(result){
+          console.log("Requested friend:", id);
+      }, 
+      error_handler);
+  };
+
+  $scope.loadUsers();
 
 });
