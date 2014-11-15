@@ -24,7 +24,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 },
                 'navbar': {
                     templateUrl: "/app/layout/topNav/loggedOutNavbar.html",
-                    controller: "LoginController"
                 }
             },
             url: "/info"
