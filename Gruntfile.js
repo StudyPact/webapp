@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         less: {
             studypact: {
                 files: {
-                    "public/assets/build/css/studypact.css": "public/assets/css/studypact.less"
+                    "public/build/css/studypact.css": "public/assets/css/studypact.less"
                 }
             }
         },
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
             },
             dev: {
                 files: {
-                    'public/index.html': 'public/index.tpl.html'
+                    'public/index.html': 'public/assets/index.tpl.html'
                 }
             }
         }
