@@ -10,5 +10,8 @@
     "grunt-include-source": "0.4.2"
   },
   "devDependencies": {
+  },
+  "scripts": {
+    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt heroku:development"
   }
 }
