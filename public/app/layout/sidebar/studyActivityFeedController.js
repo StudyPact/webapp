@@ -29,11 +29,9 @@ module.controller("StudyActivityFeedController", function ($scope, $resource) {
         _.each(studyapps, function(studyapp){
           $scope.studyApps[studyapp._id]=studyapp;
         });
+        $scope.loadSessions();
       },
       error_handler);
   };
-
   $scope.loadApps();
-  $scope.loadSessions();
-
 });
