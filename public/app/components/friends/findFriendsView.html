@@ -1,8 +1,8 @@
 <div class="sp-card col-xs-12 col-sm-6" ng-controller="FindFriendsController">
   <div class="sp-card-content">
-    <h4><i class="fa fa-search"></i><input type="text" placeholder="Find friends by Name" ng-model="searchQuery"></h4>
+    <h4><i class="fa fa-search"></i> <input type="text" placeholder="Find friends by Name" ng-model="searchQuery"></h4>
     <div id="searchFriendList">
-      <div ng-repeat="user in users | filter:searchQuery |limitTo:20">
+      <div ng-show="searchQuery" ng-repeat="user in users | filter:searchQuery |limitTo:20">
         <div class="row">
           <br/>
           <div class="col-xs-10">
