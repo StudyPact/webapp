@@ -32,6 +32,8 @@ module.controller("FriendListController", function ($scope, $resource) {
       var Friend = $resource(host + '/api/friends/'+id+"/accept");
       Friend.get({}, function(result){
           console.log("Accepted Friend:", id);
+          $scope.loadFriends();
+          $scope.loadFriendRequests();
       }, 
       error_handler);
   };
