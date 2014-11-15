@@ -10,5 +10,5 @@
     "grunt-include-source": "0.4.2"
   },
   "devDependencies": {
-  },
+  }
 }
