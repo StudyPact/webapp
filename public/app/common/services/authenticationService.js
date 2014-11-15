@@ -2,7 +2,7 @@ angular.module('studypact').factory('AuthenticationService', ["$state","$http", 
         function($state, $http, $rootScope, $q) {
 
             var authUrl = clientConfig.host + "/oauth/token";
-            var cookieLogin = false;
+            var cookieLogin = true;
 
             function setAccessToken(newAccessToken) {
                 $http.defaults.headers.common.Authorization = "Bearer " + newAccessToken;
