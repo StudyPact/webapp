@@ -1,5 +1,5 @@
 var clientConfig = {
-  host: "http://localhost:5000",
-  client_id: "veXkbkG51uMl7v7J",
-  client_secret: "fef2NfqBHYp9fKKdW2hP7eSoPrVIvTZt"
+  host: "https://studypact-rest-test.herokuapp.com",
+  client_id: "ZxaoIsUoshMow5Dx",
+  client_secret: "njNA842Msr6IVbyfO3X3Ag32Q66jl6IO"
 };
