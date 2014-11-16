@@ -6,12 +6,18 @@
         <div class="row">
           <br/>
           <div class="col-xs-10">
-            <p><strong>{{user.displayname.first}} {{user.displayname.last}}</strong></p>
+            <p><strong>{{user.displayname.first}} {{user.displayname.last}}</strong>
+            </p>
           </div>
           <div class="col-xs-1">
-            <button ng-click="sendFriendRequest(user._id)">
+            <button ng-if="user.friend_status==='NONE'" ng-click="sendFriendRequest(user._id)">
               <i class="fa fa-plus sp-blue"></i>
             </button>
+            <button ng-if="user.friend_status==='INCOMING_REQUEST'" ng-click="acceptFriendRequest(user._id)">
+              <i class="fa fa-check sp-blue"></i>
+            </button>
+            <i ng-if="user.friend_status==='OUTGOING_REQUEST'" class="fa fa-clock-o sp-blue"></i>
+            <i ng-if="user.friend_status==='CONFIRMED'" class="fa fa-child sp-blue"></i>
           </div>
         </div>
       </div>

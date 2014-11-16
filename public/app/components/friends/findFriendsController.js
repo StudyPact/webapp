@@ -25,6 +25,15 @@ module.controller("FindFriendsController", function ($scope, $resource) {
       error_handler);
   };
 
+  $scope.acceptFriendRequest = function (id) {
+      var Friend = $resource(host + '/api/friends/'+id+"/accept");
+      Friend.get({}, function(result){
+          console.log("Accepted Friend:", id);
+          $scope.loadUsers();
+      }, 
+      error_handler);
+  };
+
   $scope.loadUsers();
 
 });

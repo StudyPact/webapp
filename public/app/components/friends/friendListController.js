@@ -9,7 +9,7 @@ module.controller("FriendListController", function ($scope, $resource) {
   };
 
   $scope.loadFriendRequests = function() {
-    $resource(host + '/api/friends?status=pending').query(
+    $resource(host + '/api/friends?friend_status=incoming_request').query(
       function(friendRequests) {
         $scope.friendRequests=friendRequests;
         console.log("loaded friendRequests:", friendRequests);
@@ -19,7 +19,7 @@ module.controller("FriendListController", function ($scope, $resource) {
   };
 
   $scope.loadFriends = function() {
-    $resource(host + '/api/friends?status=confirmed').query(
+    $resource(host + '/api/friends?friend_status=confirmed').query(
       function(friends) {
         $scope.friends=friends;
         console.log("loaded friends:", friends);
