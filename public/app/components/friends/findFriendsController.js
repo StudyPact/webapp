@@ -10,8 +10,8 @@ module.controller("FindFriendsController", function ($scope, $resource) {
 
   $scope.loadUsers = function() {
     $scope.users = $resource(host + '/api/users?fields=_id,displayname,picture').query(
-      function(friends) {
-        console.log("successfully loaded friends!");
+      function(users) {
+        console.log("successfully loaded all users:", users);
       },
       error_handler);
   };
