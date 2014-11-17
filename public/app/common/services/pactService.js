@@ -5,7 +5,7 @@ angular.module('studypact').factory('PactService', ["$resource", "$log", "CacheS
     var functions = {
       loadPact: function () {
         var Pact = $resource(host + '/api/pacts/current/');
-        return Pact.get();
+        return CacheService.getAndApply("pacts/current", Pact.get());
       }
     };
     return functions;
