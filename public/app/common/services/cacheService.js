@@ -14,7 +14,7 @@ angular.module('studypact').factory('CacheService', function() {
 
   };
 
-  applyCacheToResource: function(resource, cache) {
+  var applyCacheToResource= function(resource, cache) {
     if (!cache)
       return (resource);
     // Check to see what type of value we're dealing with.
