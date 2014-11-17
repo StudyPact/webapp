@@ -1,6 +1,6 @@
 var module = angular.module("studypact");
 
-module.controller("FindFriendsController", function ($scope, $resource) {
+module.controller("FindFriendsController", ["$scope", "$resource", "UserService", function ($scope, $resource, UserService) {
   var host = clientConfig.host;
 
   var error_handler = function(err) {
@@ -9,18 +9,18 @@ module.controller("FindFriendsController", function ($scope, $resource) {
   };
 
   $scope.loadUsers = function() {
-    $scope.users = $resource(host + '/api/users?fields=_id,displayname,picture').query(
+    $scope.users = UserService.loadUsers();
+    $scope.users.$promise.then(
       function(users) {
         console.log("successfully loaded all users:", users);
-      },
-      error_handler);
+      },error_handler);
   };
-
 
   $scope.sendFriendRequest = function (id) {
       var Friend = $resource(host + '/api/friends/'+id);
       Friend.save({}, function(result){
           console.log("Requested friend:", id);
+          $scope.loadUsers();
       }, 
       error_handler);
   };
@@ -36,4 +36,4 @@ module.controller("FindFriendsController", function ($scope, $resource) {
 
   $scope.loadUsers();
 
-});
+}]);
