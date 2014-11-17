@@ -12,7 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state("layout", {
             views: {
                 '': {
-                    templateUrl: "/app/layout/layout.html"
+                    templateUrl: "/app/components/layout/layout.html"
                 }
             }
         })
@@ -23,7 +23,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: "/app/components/landingPage/gettingStarted.html"
                 },
                 'navbar': {
-                    templateUrl: "/app/layout/topNav/loggedOutNavbar.html",
+                    templateUrl: "/app/components/topNav/loggedOutNavbar.html",
                 }
             },
             url: "/info"
@@ -32,10 +32,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             parent: "layout",
             views: {
                 '': {
-                    templateUrl: "/app/layout/loggedInContentLayout.html"
+                    templateUrl: "/app/components/layout/loggedInContentLayout.html"
                 },
                 'navbar': {
-                    templateUrl: "/app/layout/topNav/loggedInNavbar.html",
+                    templateUrl: "/app/components/topNav/loggedInNavbar.html",
                     controller: "LoginController"
                 }
             }
@@ -47,13 +47,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: "/app/components/cardDisplay/cardDisplayLayout.html",
                 },
                 'sidebar': {
-                    templateUrl: "/app/layout/sidebar/studyActivitiesFeedView.html",
+                    templateUrl: "/app/components/sidebar/studyActivitiesFeedView.html",
                 },
                 'profile': {
-                    templateUrl: "/app/layout/sidebar/profileSummaryView.html",
+                    templateUrl: "/app/components/sidebar/profileSummaryView.html",
                 },
                 'menu': {
-                    templateUrl: "/app/layout/subNav/subNavView.html",
+                    templateUrl: "/app/components/subNav/subNavView.html",
                 }
             }
         })
