@@ -20,22 +20,20 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
       loadUsers: function() {
         $log.debug("Loading Users");
         var FilteredUsers = $resource(host + '/api/users?fields=_id,displayname,picture');
-        //return CacheService.getAndApply("users", FilteredUsers.query());
-        return FilteredUsers.query();
+        return CacheService.getAndApply("users", FilteredUsers.query());
+        //return FilteredUsers.query();
       },
 
       loadFriendRequests: function() {
         $log.debug("Loading Friend Requests");
         var FriendRequests = $resource(host + '/api/friends?friend_status=incoming_request');
-        //return CacheService.getAndApply("friendRequests", FriendRequests.query());
-        return FriendRequests.query();
+        return CacheService.getAndApply("friendRequests", FriendRequests.query());
       },
 
       loadFriends: function() {
         $log.debug("Loading Friends");
         var Friends = $resource(host + '/api/friends?friend_status=confirmed');
-        //return CacheService.getAndApply("friends", Friends.query());
-        return Friends.query();
+        return CacheService.getAndApply("friends", Friends.query());
       },
 
       sendFriendRequest: function(id) {
@@ -43,6 +41,7 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
         var Friend = $resource(host + '/api/friends/' + id);
         var savePromise = Friend.save({});
         savePromise.$promise.then(functions.loadUsers, error_handler);
+        savePromise.$promise.then(functions.loadFriendRequests, error_handler);
         return savePromise.$promise;
       },
 
@@ -54,8 +53,7 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
         acceptPromise.$promise.then(functions.loadFriends, error_handler);
         acceptPromise.$promise.then(functions.loadFriendRequests, error_handler);
         return acceptPromise.$promise;
-      },
-
+      }
     };
     return functions;
   }
