@@ -14,14 +14,13 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
 
       loadUser: function(id) {
         var User = $resource(host + '/api/users/' + id);
-        return User.get();
+        return CacheService.getAndApply("user/"+id, User.get());
       },
 
       loadUsers: function() {
         $log.debug("Loading Users");
         var FilteredUsers = $resource(host + '/api/users?fields=_id,displayname,picture');
         return CacheService.getAndApply("users", FilteredUsers.query());
-        //return FilteredUsers.query();
       },
 
       loadFriendRequests: function() {
@@ -40,8 +39,9 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
         $log.debug("Sending Friend Request");
         var Friend = $resource(host + '/api/friends/' + id);
         var savePromise = Friend.save({});
-        savePromise.$promise.then(functions.loadUsers, error_handler);
-        savePromise.$promise.then(functions.loadFriendRequests, error_handler);
+        savePromise.$promise.then(functions.loadUsers);
+        savePromise.$promise.then(functions.loadFriendRequests);
+        savePromise.$promise.catch(error_handler);
         return savePromise.$promise;
       },
 
@@ -49,9 +49,10 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
         $log.debug("Accepting Friend Request");
         var FriendAccept = $resource(host + '/api/friends/' + id + "/accept");
         var acceptPromise = FriendAccept.get({});
-        acceptPromise.$promise.then(functions.loadUsers, error_handler);
-        acceptPromise.$promise.then(functions.loadFriends, error_handler);
-        acceptPromise.$promise.then(functions.loadFriendRequests, error_handler);
+        acceptPromise.$promise.then(functions.loadUsers);
+        acceptPromise.$promise.then(functions.loadFriends);
+        acceptPromise.$promise.then(functions.loadFriendRequests);
+        acceptPromise.$promise.catch(error_handler);
         return acceptPromise.$promise;
       }
     };
