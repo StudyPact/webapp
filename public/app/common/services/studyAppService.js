@@ -4,8 +4,13 @@ angular.module('studypact').factory('StudyAppService', ["$resource", "$log", "Ca
 
     var functions = {
       loadApps: function() {
-        var StudyApps = $resource(host + '/api/studyapps');
-        return StudyApps.query();
+        var studyapps = CacheService.get("studyapps");
+        if (studyapps)
+          return studyapps;
+        else{
+          var StudyApps = $resource(host + '/api/studyapps');
+          return CacheService.getAndApply("studyapps", StudyApps.query());
+        }
       }
     };
     return functions;

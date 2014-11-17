@@ -27,7 +27,10 @@ angular.module('studypact').factory('CacheService', function() {
       }
       newData.$promise.then(function(result){
         applyCacheToResource(cache[cacheId], result);
-      },function(err){}); //no error handler, because someone else is responsible
+      });
+      return cache[cacheId];
+    },
+    get: function(cacheId){
       return cache[cacheId];
     }
   };
