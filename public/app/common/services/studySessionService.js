@@ -18,11 +18,9 @@ angular.module('studypact').factory('StudySessionService',
           sessions.$promise,
           apps.$promise
         ]).then(function() {
-          console.log("matching up sessions with apps:", sessions,apps)
           _.each(apps, function(studyapp) {
             studyAppsDict[studyapp._id] = studyapp;
           });
-          console.log("DICT:",studyAppsDict )
           _.each(sessions, function(session) {
             session.studyapp = studyAppsDict[session.studyapp];
           })
