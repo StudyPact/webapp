@@ -1,13 +1,11 @@
 var module = angular.module("studypact");
 
-module.controller("FriendListController", ["$scope", "$resource","UserService",function ($scope, $resource, UserService) {
-  var host = clientConfig.host;
-
+module.controller("FriendListController", ["$scope", "$resource", "UserService", function($scope, $resource, UserService) {
   $scope.loadFriendRequests = function() {
     $scope.friendRequests = UserService.loadFriendRequests();
   };
 
-  $scope.acceptFriendRequest = function (id) {
+  $scope.acceptFriendRequest = function(id) {
     UserService.acceptFriendRequest(id);
   };
 
