@@ -1,7 +1,8 @@
-angular.module('studypact').factory('AuthenticationService', ["$state", "$http", "$rootScope", "$q",
-  function($state, $http, $rootScope, $q) {
+angular.module('studypact').factory('AuthenticationService', 
+  ["$state", "$http", "$rootScope", "$q", "Config",
+  function($state, $http, $rootScope, $q, Config) {
 
-    var authUrl = clientConfig.host + "/oauth/token";
+    var authUrl = Config.host + "/oauth/token";
     var cookieLogin = true;
 
     function setAccessToken(newAccessToken) {
@@ -32,8 +33,8 @@ angular.module('studypact').factory('AuthenticationService', ["$state", "$http",
       login: function(user) {
         var request_data = {
           grant_type: "password",
-          client_id: clientConfig.client_id,
-          client_secret: clientConfig.client_secret,
+          client_id: Config.client_id,
+          client_secret: Config.client_secret,
           scope: "user",
           username: user.email,
           password: user.password

@@ -1,6 +1,7 @@
-angular.module('studypact').factory('StudyAppService', ["$resource", "$log", "CacheService",
-  function($resource, $log, CacheService) {
-    var host = clientConfig.host;
+angular.module('studypact').factory('StudyAppService', 
+  ["$resource", "$log", "CacheService", "Config",
+  function($resource, $log, CacheService, Config) {
+    var host = Config.host;
 
     var functions = {
       loadApps: function() {

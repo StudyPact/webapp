@@ -1,6 +1,7 @@
-angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheService",
-  function($resource, $log, CacheService) {
-    var host = clientConfig.host;
+angular.module('studypact').factory('UserService', 
+  ["$resource", "$log", "CacheService", "Config",
+  function($resource, $log, CacheService, Config) {
+    var host = Config.host;
 
     var error_handler = function(err) {
       console.error(err);
