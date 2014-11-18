@@ -32,6 +32,16 @@ angular.module('studypact').factory('CacheService', function() {
     },
     get: function(cacheId){
       return cache[cacheId];
+    },
+    apply: function(cacheId, newData){
+      if (!cache[cacheId])
+        cache[cacheId]=newData;
+      else{
+        newData.$promise.then(function(result){
+          applyCacheToResource(cache[cacheId], result);
+        });
+      }
+      return newData;
     }
   };
 });
