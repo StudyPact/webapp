@@ -42,6 +42,10 @@ angular.module('studypact').factory('CacheService', function() {
         });
       }
       return newData;
+    },
+    delete: function(cacheId){
+      delete cache[cacheId];
+      return;
     }
   };
 });

@@ -13,6 +13,18 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
         return User.save(user).$promise;
       },
 
+      
+      deleteUser: function(id) {
+        $log.debug("Deleting User:", id);
+        var User = $resource(host + '/api/users/' + id);
+        var promise = User.delete().$promise;
+        promise.then(function(){
+          CacheService.delete("user/"+id);
+        });
+        promise.catch(error_handler);
+        return promise
+      },
+
       saveUser: function(userUpdate) {
         var id = userUpdate._id
         $log.debug("Saving User:", id);
