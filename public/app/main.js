@@ -76,6 +76,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             data: {
                 activeBoxes: [
                     "/app/components/settings/holidayView.html",
+                    "/app/components/settings/passwordView.html",
                     "/app/components/myStudy/profileView.html",
                 ]
             },
