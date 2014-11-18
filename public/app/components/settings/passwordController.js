@@ -16,7 +16,6 @@ module.controller("PasswordController", ["$scope", "$resource","UserService",
     $scope.user.$promise.then(function(result){
       $scope.success=true;
       $scope.submitted=false;
-      $scope.confirmPassword="";
     });
     $scope.user.$promise.catch(function(error){
       $scope.error=error;
