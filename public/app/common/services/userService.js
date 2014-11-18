@@ -8,11 +8,27 @@ angular.module('studypact').factory('UserService', ["$resource", "$log", "CacheS
 
     var functions = {
       createUser: function(user) {
+        $log.debug("Creating User");
         var User = $resource(clientConfig.host + '/api/users');
         return User.save(user).$promise;
       },
 
+      saveUser: function(userUpdate) {
+        var id = userUpdate._id
+        $log.debug("Saving User:", id);
+        var userData = angular.copy(userUpdate);
+        delete userData._id;
+
+        var User = $resource(host + '/api/users/'+ id, null, {
+          "update": {
+            method: "PUT"
+          }
+        });
+        return CacheService.apply("user/"+id, User.update({}, userData));
+      },
+
       loadUser: function(id) {
+        $log.debug("Loading User:", id);
         var User = $resource(host + '/api/users/' + id);
         return CacheService.getAndApply("user/"+id, User.get());
       },
