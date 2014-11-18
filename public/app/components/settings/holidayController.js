@@ -1,39 +1,19 @@
 var module = angular.module("studypact");
 
-module.controller("HolidayController", function($scope, $resource) {
-  var host = clientConfig.host;
+module.controller("HolidayController", ["$scope", "$resource","UserService", 
+  function($scope, $resource, UserService) {
 
-  var error_handler = function(err) {
-    console.error(err);
-    alert(err.data);
-  };
-
-
-  $scope.loadUser = function() {
-    $scope.user = $resource(host + '/api/users/me').get(
-      function(result) {
-        console.log("LOADED user")
-      },
-      error_handler);
+  $scope.loadUser = function(id) {
+    $scope.user = UserService.loadUser(id);
   };
 
   $scope.save = function() {
-    var updatedUser = {
+    var userUpdate = {
+      _id:"me",
       holiday: $scope.user.holiday,
-    }
-    var User = $resource(host + '/api/users/me', null, {
-      "update": {
-        method: "PUT"
-      }
-    });
-    User.update({
-        userId: $scope.user._id
-      }, updatedUser,
-      function(result) {
-        console.log("Success");
-      },
-      error_handler);
+    };
+    $scope.user=UserService.saveUser(userUpdate);
   };
 
-  $scope.loadUser();
-});
+  $scope.loadUser("me");
+}]);
