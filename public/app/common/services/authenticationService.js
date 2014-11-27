@@ -7,6 +7,8 @@ angular.module('studypact').factory('AuthenticationService',
 
     function setAccessToken(newAccessToken) {
       $http.defaults.headers.common.Authorization = "Bearer " + newAccessToken;
+      $http.defaults.headers.common.version = 2;
+
       accessToken = newAccessToken;
     };
 
