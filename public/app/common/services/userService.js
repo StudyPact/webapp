@@ -10,7 +10,7 @@ angular.module('studypact').factory('UserService',
     var functions = {
       createUser: function(user) {
         $log.debug("Creating User");
-        var User = $resource(clientConfig.host + '/api/users');
+        var User = $resource(Config.host + '/api/users');
         return User.save(user).$promise;
       },
 
