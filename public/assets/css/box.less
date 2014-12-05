@@ -59,6 +59,44 @@
   background-color: orange;
 }
 
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .5;
+    }
+  }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+/**  ---------------- Button design-----------------**/
+
+#Loginbtn {
+	background:#4cbef4;	
+	color:#FFFFFF;
+	min-width:80px;
+	}
+	
+#Signupbtn {
+	min-width:80px;
+	}
+
+/**  ---------------- Landing Button alignment -----------------**/
+
+#signupbtn {
+	padding:5px;
+	}
+#loginbtn {
+	padding:5px;
+	}
+
 /**  ---------------- unused -----------------**/
 
 .sp-box--fixed-height {
