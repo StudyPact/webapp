@@ -1,12 +1,23 @@
-<nav id="navBar" class="navbar navbar-default" role="navigation" bs-navbar>
-  <ul class="nav navbar-nav">
-    <a class="navbar-brand" href="#"> <img alt="Brand" src="../../../assets/images/studypactlogo.png"> </a>
-  </ul>
-  <ul class="nav navbar-nav navbar-right">
-    <li>
-      <a ng-click="logout()" href="" id="logoutbtn">
-        <button id="btnwhite" type="button" class="btn btn-default navbar-btn">Logout</button>
-      </a>
-    </li>
-  </ul>
+<nav id="navBar" class="navbar navbar-default" data-start-collapsed="true" bs-collapse>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" bs-collapse-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> <img alt="Brand" src="../../../assets/images/studypactlogo.png"> </a>
+    </div>
+
+    <div bs-collapse-target>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a ng-click="logout()" href="" id="logoutbtn">
+            <button id="btnwhite" type="button" class="btn btn-default navbar-btn">Logout</button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
