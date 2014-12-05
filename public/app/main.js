@@ -3,6 +3,7 @@
 var app = angular.module("studypact", [
   "ui.router",
   "ngResource",
+  "ngAnimate",
   "angularMoment",
   'mgcrea.ngStrap'
 ]);

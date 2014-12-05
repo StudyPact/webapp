@@ -1,16 +1,19 @@
 <nav id="navBar" class="navbar navbar-default" role="navigation" ng-controller="LoginController">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="#">StudyPact Logo</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signupModal">Signup</button></li>
-                <li><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#loginModal">Login</button></li>
-            </ul>
-        </div> 
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">StudyPact Logo</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button type="button" class="btn btn-primary btn-sm" data-animation="am-fade-and-slide-top" data-template="/app/components/topNav/signupView.html" bs-modal="modal">Signup
+          </button>
+        </li><li>
+          <a data-animation="am-fade-and-slide-top" data-template="/app/components/topNav/loginView.html" bs-modal="modal">Login
+          </a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
-
-<div ng-include='"/app/components/topNav/loginView.html"'></div>
-<div ng-include='"/app/components/topNav/signupView.html"'></div>
