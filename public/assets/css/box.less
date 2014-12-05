@@ -3,12 +3,12 @@
 }
 .sp-card {
 	float: left;
-	height: 200px;
+	height: 100%;
 	padding: 8px;
 }
 .sp-card-half {
 	float: left;
-	height: 130px;
+	height: 100%;
 	padding: 8px;
 }
 .sp-sidebar {
@@ -17,17 +17,21 @@
 	padding: 8px;
 }
 .sp-card-content {
- 	.box-shadow();
+ .box-shadow();
 	background-color: white;
 	padding-left: 18px;
 	padding-right: 18px;
 	padding-top: 10px;
 	padding-bottom: 18px;
+	min-height: 180px;
 	height: 100%;
 	width: 100%;
 	-webkit-border-radius: 2;
 	-moz-border-radius: 2;
 	border-radius: 2px;
+}
+#totalstudy {
+	min-height: 180px;
 }
 .sp-blue {
 	color: #4cbef4;
@@ -39,12 +43,12 @@
 	color: #ec1827;
 }
 .sp-total-study-time {
-	font-size: 7em;
+	font-size: 6em;
 	margin: 0;
 	line-height: 1;
 }
 .sp-progress-time {
-	font-size: 6em;
+	font-size: 5em;
 	margin: 0;
 	line-height: 1;
 	margin-top: -10px;
@@ -68,7 +72,9 @@
 }
 }
 }
-
+#profilebox {
+	margin-left: 5%;
+}
 /**  ---------------- Button design-----------------**/
 #btnblue {
 	background: #4cbef4;
@@ -102,29 +108,15 @@
 #logoutbtn {
 	padding: 5px;
 }
-
 /**  ---------------- Subnav -----------------**/
-#subNav{
-	margin-top:8px;
-	margin-left:8px;
-	margin-right:8px;
+#subNav {
+	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: 8px;
 }
-
 #rightsetting {
-	margin-right:15px;
+	margin-right: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 /**  ---------------- unused -----------------**/
 
 .sp-box--fixed-height {
