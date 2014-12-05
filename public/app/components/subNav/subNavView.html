@@ -1,12 +1,12 @@
-<nav id="subNav" class="navbar" role="navigation">
+<nav id="subNav" class="navbar" role="navigation" ng-controller="NavBarController">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#myStudy">Study</a></li>
-                <li><a href="#friends">Friends</a></li>
+                <li ng-class="{ active: isActive('/myStudy')}"><a href="#myStudy">Study</a></li>
+                <li ng-class="{ active: isActive('/friends')}"><a href="#friends">Friends</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#settings">Settings</a></li>
+                <li ng-class="{ active: isActive('/settings')}"><a href="#settings">Settings</a></li>
             </ul>
         </div>
     </div>
