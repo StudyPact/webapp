@@ -1,19 +1,19 @@
-<nav id="navBar" class="navbar navbar-default" role="navigation" ng-controller="LoginController">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <a class="navbar-brand" href="#"> <img alt="Brand" src="../../../assets/images/studypactlogo.png"> </a> 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a data-animation="am-fade-and-slide-top" data-template="/app/components/topNav/loginView.html" bs-modal="modal" id="loginbtn"><button id="btnwhite" type="button" class="btn btn-default navbar-btn">Login</button>
-          </a>
-        </li>
-        <li>
-          <a data-animation="am-fade-and-slide-top" data-template="/app/components/topNav/signupView.html" bs-modal="modal" id="signupbtn"><button id="btnblue" type="button" class="btn btn-default navbar-btn">Signup</button>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<nav id="navBar" class="navbar navbar-default" role="navigation" bs-navbar ng-controller="LoginController">
+  <ul class="nav navbar-nav">
+    <li>
+      <a class="navbar-brand" href="#"> <img alt="Brand" src="../../../assets/images/studypactlogo.png"> </a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <a data-animation="am-fade-and-slide-top" data-template="/app/components/topNav/loginView.html" bs-modal="modal" id="loginbtn">
+        <button id="btnwhite" type="button" class="btn btn-default navbar-btn">Login</button>
+      </a>
+    </li>
+    <li>
+      <a data-animation="am-fade-and-slide-top" data-template="/app/components/topNav/signupView.html" bs-modal="modal" id="signupbtn">
+        <button id="btnblue" type="button" class="btn btn-default navbar-btn">Signup</button>
+      </a>
+    </li>
+  </ul>
 </nav>
