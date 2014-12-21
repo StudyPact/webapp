@@ -78,6 +78,8 @@ app.config(function($stateProvider) {
       data: {
         activeBoxes: [
           "/app/components/settings/holidayView.html",
+          "/app/components/settings/rewardView.html",
+          "/app/components/settings/paymentInfoView.html",
           "/app/components/settings/passwordView.html",
           "/app/components/settings/deleteView.html",
         ]
