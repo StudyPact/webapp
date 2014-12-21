@@ -12,10 +12,10 @@
     </div>
     <div class="row sp-blue">
       <div class="col-xs-6">
-        <p class="sp-progress-time">{{(pact.progress) / 60 | numberFixedLen:2}}:{{(pact.progress) % 60 | numberFixedLen:2}}</p>
+        <p class="sp-progress-time">{{(pact.progress) / 60 |floor| numberFixedLen:2}}:{{(pact.progress) |floor|mod:60 | numberFixedLen:2}}</p>
       </div>
       <div class="col-xs-6">
-        <p class="sp-progress-time pull-right">{{(pact.duration-pact.progress) / 60 | numberFixedLen:2}}:{{(pact.duration-pact.progress) % 60| ceil  | numberFixedLen:2}}</p>
+        <p class="sp-progress-time pull-right">{{(pact.duration-pact.progress) / 60 | ceil| numberFixedLen:2}}:{{pact.duration-pact.progress| ceil | mod:60 | numberFixedLen:2}}</p>
       </div>
     </div>
     <div class="row">
