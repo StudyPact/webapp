@@ -1,10 +1,10 @@
 var module = angular.module('studypact');
 
 module.filter('numberFixedLen', function() {
-    return function(a, b) {
-      return (1e4 + Math.floor(a) + "").slice(-b);
-    };
-  });
+  return function(a, b) {
+    return (1e4 + Math.floor(a) + "").slice(-b);
+  };
+});
 
 module.filter('ceil', function() {
   return function(input) {
@@ -20,7 +20,7 @@ module.filter('floor', function() {
 
 
 module.filter('mod', function() {
-  return function(a,m) {
+  return function(a, m) {
     return a % m;
   };
 });
