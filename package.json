@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "express": "4.x.x",
+  },
+  "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-cli": "~0.1.13",
     "grunt-contrib-less": "~1.0.0",
@@ -12,6 +14,5 @@
     "grunt-ng-constant": "~1.0.0",
     "grunt-env": "~0.4.2",
     "grunt-shell": "~1.1.1"
-  },
-  "devDependencies": {}
+  }
 }
