@@ -9,7 +9,8 @@
     "grunt-contrib-less": "*",
     "grunt-contrib-watch": "0.6.1",
     "grunt-include-source": "0.4.2",
-    "grunt-ng-constant": "*"
+    "grunt-ng-constant": "*",
+    "grunt-env": "*"
   },
   "devDependencies": {
   },

@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-include-source');
     grunt.loadNpmTasks('grunt-ng-constant');
+    grunt.loadNpmTasks('grunt-env');
 
     grunt.initConfig({
 
@@ -72,10 +73,16 @@ module.exports = function (grunt) {
                     }
                 }
             }
+        },
+        env : {
+            local: {
+                src : ".env"
+            }
         }
     });
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', [ 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
-    grunt.registerTask('watch', ['watch']);
+    grunt.registerTask('build-local', [ 'env:local', 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
+    grunt.registerTask('watch' ['watch']);
     grunt.registerTask('heroku:development', ['build']);
 };
