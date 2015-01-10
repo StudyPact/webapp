@@ -74,15 +74,32 @@ module.exports = function (grunt) {
                 }
             }
         },
-        env : {
+        env: {
             local: {
-                src : ".env"
+                src: ".env"
             }
         }
     });
+    grunt.registerTask('update-config', function () {
+        grunt.config.merge({
+            ngconstant: {
+                config: {
+                    constants: {
+                        Config: {
+                            host: process.env.HOST,
+                            api_version: process.env.API_VERSION,
+                            client_id: process.env.CLIENT_ID,
+                            client_secret: process.env.CLIENT_SECRET
+                        }
+                    }
+                }
+            }
+        });
+    });
+    grunt.registerTask('load-local-config', ['env:local', 'update-config'])
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', [ 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
-    grunt.registerTask('build-local', [ 'env:local', 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
+    grunt.registerTask('build', ['less:studypact', 'ngconstant:config', 'includeSource:dev']);
+    grunt.registerTask('build-local', ['less:studypact', 'load-local-config', 'ngconstant:config', 'includeSource:dev']);
     grunt.registerTask('watch', ['watch']);
-    grunt.registerTask('heroku:development', ['build']);
+    grunt.registerTask('heroku', ['build']);
 };
