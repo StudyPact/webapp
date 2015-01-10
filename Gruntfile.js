@@ -65,10 +65,10 @@ module.exports = function (grunt) {
                 },
                 constants: {
                     Config: {
-                        host: "https://studypact-rest-test.herokuapp.com",
-                        api_version: 2,
-                        client_id: "ZxaoIsUoshMow5Dx",
-                        client_secret: "njNA842Msr6IVbyfO3X3Ag32Q66jl6IO"
+                        host: process.env.HOST,
+                        api_version: process.env.API_VERSION,
+                        client_id: process.env.CLIENT_ID,
+                        client_secret: process.env.CLIENT_SECRET
                     }
                 }
             }
