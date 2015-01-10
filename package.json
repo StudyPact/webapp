@@ -14,7 +14,4 @@
     "grunt-shell": "~1.1.1"
   },
   "devDependencies": {},
-  "scripts": {
-    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt heroku"
-  }
 }
