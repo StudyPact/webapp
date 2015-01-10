@@ -7,9 +7,19 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-include-source');
     grunt.loadNpmTasks('grunt-ng-constant');
+    grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
-
+        shell:{
+            start: {
+                command: 'foreman start',
+                options: {
+                    stdout: true,
+                    stderr: true
+                }
+            }
+        },
         watch: {
             less: {
                 files: ['public/assets/css/*.less'],
@@ -72,10 +82,34 @@ module.exports = function (grunt) {
                     }
                 }
             }
+        },
+        env: {
+            local: {
+                src: ".env"
+            }
         }
     });
+    grunt.registerTask('update-config', function () {
+        grunt.config.merge({
+            ngconstant: {
+                config: {
+                    constants: {
+                        Config: {
+                            host: process.env.HOST,
+                            api_version: process.env.API_VERSION,
+                            client_id: process.env.CLIENT_ID,
+                            client_secret: process.env.CLIENT_SECRET
+                        }
+                    }
+                }
+            }
+        });
+    });
+    grunt.registerTask('load-local-config', ['env:local', 'update-config'])
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', [ 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
+    grunt.registerTask('build', ['less:studypact', 'ngconstant:config', 'includeSource:dev']);
+    grunt.registerTask('build-local', ['less:studypact', 'load-local-config', 'ngconstant:config', 'includeSource:dev']);
     grunt.registerTask('watch', ['watch']);
-    grunt.registerTask('heroku:development', ['build']);
+    grunt.registerTask('run', ['build-local', 'shell:start', 'watch']);
+    grunt.registerTask('heroku', ['build']);
 };
