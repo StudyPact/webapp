@@ -1,0 +1,26 @@
+<div class="sp-card col-xs-12 col-sm-6" ng-controller="FindFriendsController">
+  <div class="sp-card-content">
+    <h4><i class="fa fa-search"></i> <input type="text" placeholder="Find friends by Name" ng-model="searchQuery"></h4>
+    <div id="searchFriendList">
+      <div ng-show="searchQuery.length>0" ng-repeat="user in users | filter:searchQuery |limitTo:20">
+        <div class="row">
+          <br/>
+          <div class="col-xs-10">
+            <p><strong>{{user.displayname.first}} {{user.displayname.last}}</strong>
+            </p>
+          </div>
+          <div class="col-xs-1">
+            <button ng-if="user.friend_status==='NONE'" ng-click="sendFriendRequest(user._id)">
+              <i class="fa fa-plus sp-blue"></i>
+            </button>
+            <button ng-if="user.friend_status==='INCOMING_REQUEST'" ng-click="acceptFriendRequest(user._id)">
+              <i class="fa fa-check sp-blue"></i>
+            </button>
+            <i ng-if="user.friend_status==='OUTGOING_REQUEST'" class="fa fa-clock-o sp-blue"></i>
+            <i ng-if="user.friend_status==='CONFIRMED'" class="fa fa-child sp-blue"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

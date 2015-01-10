@@ -1,0 +1,10 @@
+<div class="sp-card col-xs-6" ng-controller="RewardController">
+  <div class="sp-card-content">
+    <h4><i class="fa fa-money sp-green"></i> Rewards
+    </h4>
+    <h2 class="text-center">$ {{user.current_earnings | floor}}.{{user.current_earnings*100 |floor|mod:100|numberFixedLen:2}}</h2>
+    <input type="submit" value="Payout" class="btn btn-success btn-block btn-lg" tabindex="6" ng-click="requestPayout()" ng-class="{'disabled': user.current_earnings<10 || user.payout_request }">
+    <p class="text-center" ng-show="user.current_earnings<10">* you can request a payout once you reach 10$.</p>
+    <p class="text-center" ng-show="user.payout_request">Please wait for your payout request to get processed.</p>
+  </div>
+</div>

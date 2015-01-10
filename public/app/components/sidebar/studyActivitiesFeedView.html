@@ -1,0 +1,19 @@
+<div class="sp-sidebar" ng-controller="StudyActivityFeedController">
+  <div class="sp-card-content">
+    <h4><i class="fa fa-clock-o"></i> Study Activities</h4>
+    <div id="studyActivityFeed">
+      <div ng-repeat="studySession in studySessions">
+        <div class="row">
+          <br/>
+          <div class="col-xs-1">
+            <h4><i class="fa fa-circle sp-blue"></i></h4>
+          </div>
+          <div class="col-xs-10">
+            <strong><span am-time-ago="studySession.end"></span></strong>
+            <p>Studied on <strong>{{studySession.studyapp.name}}</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

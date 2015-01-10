@@ -1,0 +1,46 @@
+
+.header {
+	width: 100%;
+	height: 50px;
+	padding: 8px;
+	border-bottom: 1px solid #5cbeeb;
+	background-color: white;
+}
+.header__buttons {
+	text-align: right;
+}
+ .common-header() {
+ height: @sp-header-height;
+ width: 100%;
+ padding: 5px;
+}
+.sidemenu__header {
+ .common-header();
+ background-color: darken(@sp-theme-color-primary2, 10%);
+ border-bottom: 1px solid lighten(@sp-theme-color-primary2, 10%);
+ border-right: 1px solid lighten(@sp-theme-color-primary2, 10%);
+}
+.main__header {
+ .common-header();
+ background-color: @sp-theme-color-primary1;
+ color: @sp-theme-color-primary3;
+ border-bottom: 1px solid lighten(@sp-theme-color-primary2, 10%);
+}
+.sp-mobile-button {
+	width: 50px;
+	height: 50px;
+	font-size: 44px;
+	position: relative;
+	 .fa {
+	 left: 6px;
+	 top: 5px;
+	 position: absolute;
+	}
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	color: #4cbef4;
+	cursor: default;
+	background-color: #4cbef4;
+	border: 1px solid #dddddd;
+	border-bottom-color: transparent;
+}

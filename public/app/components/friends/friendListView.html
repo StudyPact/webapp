@@ -1,0 +1,28 @@
+<div class="sp-card col-xs-12 col-sm-6" ng-controller="FriendListController">
+  <div class="sp-card-content">
+    <h4><i class="fa fa-user"></i> Friends</h4>
+    <div id="friendList">
+    <p class="text-center " style="border-top: 1px solid #ccc;">Request</p>
+      <div ng-repeat="friend in friendRequests">
+        <div class="row">
+          <div class="col-xs-10">
+            <p><strong>{{friend.displayname.first}} {{friend.displayname.last}}</strong></p>
+          </div>
+          <div class="col-xs-1">
+            <button ng-click="acceptFriendRequest(friend._id)">
+              <i class="fa fa-check sp-blue"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="text-center " style="border-top: 1px solid #ccc;">Friends</p>
+      <div ng-repeat="friend in friends">
+        <div class="row">
+          <div class="col-xs-10">
+            <p><strong>{{friend.displayname.first}} {{friend.displayname.last}}</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
