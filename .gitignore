@@ -8,3 +8,4 @@ workshop
 build
 public/index.html
 public/assets/build/css/*
+public/app/config.js

@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-include-source');
+    grunt.loadNpmTasks('grunt-ng-constant');
 
     grunt.initConfig({
 
@@ -49,10 +50,32 @@ module.exports = function (grunt) {
                     'public/index.html': 'public/assets/index.tpl.html'
                 }
             }
+        },
+        ngconstant: {
+            // Options for all targets
+            options: {
+                wrap: false,
+                deps: false,
+                name: 'studypact'
+            },
+            // Environment targets
+            config: {
+                options: {
+                    dest: 'public/app/config.js'
+                },
+                constants: {
+                    Config: {
+                        host: process.env.HOST,
+                        api_version: process.env.API_VERSION,
+                        client_id: process.env.CLIENT_ID,
+                        client_secret: process.env.CLIENT_SECRET
+                    }
+                }
+            }
         }
     });
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', [ 'less:studypact', 'includeSource:dev']);
-    grunt.registerTask('watch' ['watch'])
+    grunt.registerTask('build', [ 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
+    grunt.registerTask('watch', ['watch']);
     grunt.registerTask('heroku:development', ['build']);
 };
