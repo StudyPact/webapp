@@ -8,9 +8,18 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-include-source');
     grunt.loadNpmTasks('grunt-ng-constant');
     grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.initConfig({
-
+        shell:{
+            start: {
+                command: 'foreman start',
+                options: {
+                    stdout: true,
+                    stderr: true
+                }
+            }
+        },
         watch: {
             less: {
                 files: ['public/assets/css/*.less'],
@@ -101,5 +110,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['less:studypact', 'ngconstant:config', 'includeSource:dev']);
     grunt.registerTask('build-local', ['less:studypact', 'load-local-config', 'ngconstant:config', 'includeSource:dev']);
     grunt.registerTask('watch', ['watch']);
+    grunt.registerTask('run', ['build-local', 'shell:start', 'watch']);
     grunt.registerTask('heroku', ['build']);
 };
