@@ -83,6 +83,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', [ 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
     grunt.registerTask('build-local', [ 'env:local', 'less:studypact', 'ngconstant:config', 'includeSource:dev']);
-    grunt.registerTask('watch' ['watch']);
+    grunt.registerTask('watch', ['watch']);
     grunt.registerTask('heroku:development', ['build']);
 };
