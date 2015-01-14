@@ -11,7 +11,7 @@
        <div>
           <button type="button" class="btn btn-success" ng-click="decreaseStakes()">-</button>
              
-          Stakes: {{user.pact_stakes}}
+          Stakes: {{user.pact_stakes | currency:"$":0}}
           <button type="button" class="btn btn-success" ng-click="increaseStakes()">+</button>
        </div> 
          <button type="button" class="btn" ng-click="save()" ng-show="changed">Save Changes</button>
