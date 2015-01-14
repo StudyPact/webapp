@@ -1,8 +1,17 @@
-<div class="sp-card col-xs-12 col-xs-6">
+<div class="sp-card col-xs-12 col-xs-6" ng-controller="NextWeekPactController as nextWeekPactCtrl">
   <div class="sp-card-content">
     <p>Next Week</p>
     <p>Lorem Ipsum hulu bulu voodoo fodoo </p>
-    Hours: <input type="number" name="input" ng-model="user.pact_duration"
-                 min="1" max="10" required>
+    <div>
+       <button type="button" class="btn btn-primary" ng-click="decreaseHours()">-</button>
+       Hours: {{user.pact_duration / 60 | ceil}}
+       <button type="button" class="btn btn-primary" ng-click="increaseHours()">+</button>      
+    </div>
+    <div>
+       <button type="button" class="btn btn-success" ng-click="decreaseStakes()">-</button>
+          
+       Stakes: {{user.pact_stakes}}
+       <button type="button" class="btn btn-success" ng-click="increaseStakes()">+</button>
+    </div>    
   </div>
 </div>
