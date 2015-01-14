@@ -2,16 +2,22 @@
   <div class="sp-card-content">
     <p>Next Week</p>
     <p>Lorem Ipsum hulu bulu voodoo fodoo </p>
-    <div>
-       <button type="button" class="btn btn-primary" ng-click="decreaseHours()">-</button>
-       Hours: {{user.pact_duration / 60 | ceil}}
-       <button type="button" class="btn btn-primary" ng-click="increaseHours()">+</button>      
-    </div>
-    <div>
-       <button type="button" class="btn btn-success" ng-click="decreaseStakes()">-</button>
+    <div ng-show="user.pact_duration && user.pact_stakes">
+       <div>
+          <button type="button" class="btn btn-primary" ng-click="decreaseHours()">-</button>
+          Hours: {{user.pact_duration / 60 | ceil}}
+          <button type="button" class="btn btn-primary" ng-click="increaseHours()">+</button>      
+       </div>
+       <div>
+          <button type="button" class="btn btn-success" ng-click="decreaseStakes()">-</button>
+             
+          Stakes: {{user.pact_stakes}}
+          <button type="button" class="btn btn-success" ng-click="increaseStakes()">+</button>
+       </div> 
+         <button type="button" class="btn" ng-click="save()" ng-show="changed">Save Changes</button>
+       <div >
           
-       Stakes: {{user.pact_stakes}}
-       <button type="button" class="btn btn-success" ng-click="increaseStakes()">+</button>
+       </div>  
     </div>    
   </div>
 </div>

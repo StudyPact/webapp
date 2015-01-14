@@ -12,6 +12,8 @@ module.controller("NextWeekPactController", ["$scope", "$resource","UserService"
 
   $scope.loadUser = function(id) {
     $scope.user = UserService.loadUser(id);
+    $scope.changed = false;
+
   };
 
   $scope.save = function() {
@@ -21,29 +23,34 @@ module.controller("NextWeekPactController", ["$scope", "$resource","UserService"
       pact_duration: $scope.user.pact_duration
     };
     $scope.user=UserService.saveUser(userUpdate);
+    $scope.changed = false;
   };
 
   $scope.loadUser("me");
 
   $scope.increaseHours = function() {
+    $scope.changed = true;
     $scope.user.pact_duration += HOUR;
     if ($scope.user.pact_duration>HOUR * MAX_HOURS)
       $scope.user.pact_duration = HOUR * MAX_HOURS;
   }
 
   $scope.decreaseHours = function() {
+    $scope.changed = true;
     $scope.user.pact_duration -= HOUR;
     if ($scope.user.pact_duration < HOUR * MIN_HOURS)
       $scope.user.pact_duration = HOUR * MIN_HOURS;
   }
 
   $scope.increaseStakes = function() {
+    $scope.changed = true;
     $scope.user.pact_stakes+= STAKES_INCREMENT;
     if ($scope.user.pact_stakes> MAX_STAKES)
       $scope.user.pact_stakes = MAX_STAKES;
   }
 
   $scope.decreaseStakes = function() {
+    $scope.changed = true;
     $scope.user.pact_stakes-= STAKES_INCREMENT;
     if ($scope.user.pact_stakes<MIN_STAKES)
       $scope.user.pact_stakes = MIN_STAKES;
