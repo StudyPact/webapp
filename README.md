@@ -21,4 +21,4 @@ Continuous Integration
 ----------------------
 Test Status: [ ![Codeship Status for StudyPact/webapp](https://codeship.com/projects/056550b0-4ea7-0132-13bf-323959f31113/status)](https://codeship.com/projects/47769)
 * development branch will end up here https://studypact-webapp-test.herokuapp.com
-* master branch will end up here https://studypact-webapp.herokuapp.com
+* master branch will end up here in a secret production test environment
