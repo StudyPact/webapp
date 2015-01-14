@@ -14,7 +14,7 @@ Getting started
 $ git clone git@github.com:StudyPact/webapp.git studypact-webapp
 $ cd studypact-webapp
 $ npm install
-$ grunt build
+$ grunt build-local
 $ foreman start
 ```
 
