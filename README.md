@@ -6,7 +6,7 @@ Requirements
 
 * nodejs for hosting the files
 * gruntjs for compiling
-
+* heroku toolbelt for foreman https://toolbelt.heroku.com/
 
 Getting started
 ---------------
@@ -15,6 +15,7 @@ $ git clone git@github.com:StudyPact/webapp.git studypact-webapp
 $ cd studypact-webapp
 $ npm install
 $ grunt build
+$ foreman start
 ```
 
 Continuous Integration
