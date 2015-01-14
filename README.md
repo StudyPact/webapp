@@ -11,7 +11,7 @@ Requirements
 Getting started
 ---------------
 ```shell
-$ git pull git@github.com:StudyPact/webapp.git studypact-webapp
+$ git clone git@github.com:StudyPact/webapp.git studypact-webapp
 $ cd studypact-webapp
 $ npm install
 $ grunt build
