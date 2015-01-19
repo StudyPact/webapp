@@ -12,14 +12,16 @@ module.controller("PasswordController", ["$scope", "$resource","UserService",
       _id:"me",
       password: $scope.user.password,
     };
+
     $scope.user=UserService.saveUser(userUpdate);
-    $scope.user.$promise.then(function(result){
+    $scope.user.$promise.then(function(){
       $scope.success=true;
       $scope.submitted=false;
     });
+
     $scope.user.$promise.catch(function(error){
       $scope.error=error;
-    })
+    });
   };
 
   $scope.loadUser("me");
