@@ -1,0 +1,17 @@
+<div class="sp-card col-xs-6" ng-controller="PaymentController">
+  <div class="sp-card-content">
+    <h4><i class="fa fa-credit-card sp-green"></i> Payment Info</h4>
+    <div ng-show="user.payment_status=='GOOD_PAYMENT'">
+      <h2 class="text-center" >Confirmed.</h2>
+      <input value="Update Creditcard" class="btn btn-success btn-block btn-lg" ng-click="updatePaymentInfo()">
+    </div>
+    <div ng-show="user.payment_status=='NO_PAYMENT'">
+      <h2 class="text-center" >No payment.</h2>
+      <input value="Add Creditcard" class="btn btn-success btn-block btn-lg" ng-click="updatePaymentInfo()">
+    </div>
+    <div ng-show="user.payment_status=='BAD_PAYMENT'">
+      <h2 class="text-center" >Bad Payment.</h2>
+      <input value="Add CreditCard" class="btn btn-success btn-block btn-lg" ng-click="updatePaymentInfo()">
+    </div>
+  </div>
+</div>

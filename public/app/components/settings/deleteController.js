@@ -6,13 +6,13 @@ module.controller("DeleteController",
 
   $scope.delete = function() {
     var promise = UserService.deleteUser("me");
-    promise.then(function(result){
+    promise.then(function(){
       console.log("logout from delete controller");
       AuthenticationService.logout();
       $state.go("loggedOut");
     });
     promise.catch(function(error){
       $scope.error=error;
-    })
+    });
   };
 }]);

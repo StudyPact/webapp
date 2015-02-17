@@ -23,7 +23,7 @@ angular.module('studypact').factory('UserService',
           CacheService.delete("user/"+id);
         });
         promise.catch(error_handler);
-        return promise
+        return promise;
       },
 
       saveUser: function(userUpdate) {

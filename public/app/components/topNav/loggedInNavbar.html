@@ -1,11 +1,22 @@
-<nav id="navBar" class="navbar navbar-default" role="navigation">
+<nav id="navBar" class="navbar navbar-default" bs-collapse>
   <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <a class="navbar-brand" href="#"> <img alt="Brand" src="../../../assets/images/studypactlogo.png"> </a> 
-      </ul>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" bs-collapse-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> <img alt="Brand" src="../../../assets/images/studypactlogo.png"> </a>
+    </div>
+
+    <div bs-collapse-target>
       <ul class="nav navbar-nav navbar-right">
-        <li><a ng-click="logout()" href="" id="logoutbtn"><button id="btnwhite" type="button" class="btn btn-default navbar-btn">Logout</button></a></li>
+        <li>
+          <a ng-click="logout()" href="" id="logoutbtn">
+            <button id="btnwhite" type="button" class="btn btn-default navbar-btn">Logout</button>
+          </a>
+        </li>
       </ul>
     </div>
   </div>

@@ -79,9 +79,15 @@ app.config(function($stateProvider) {
       data: {
         activeBoxes: [
           "/app/components/settings/holidayView.html",
+<<<<<<< HEAD
 		  
 		  "/app/components/settings/creditcardView.html",
 		  "/app/components/settings/passwordView.html",
+=======
+          "/app/components/settings/rewardView.html",
+          "/app/components/settings/paymentInfoView.html",
+          "/app/components/settings/passwordView.html",
+>>>>>>> d37119d9da638032921a99ffb1a4b44b2a3c7f10
           "/app/components/settings/deleteView.html",
         ]
       },

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="sp-card col-xs-12 col-xs-6">
     <div class="sp-card-content">
     
@@ -10,3 +11,27 @@
     
     </div>
 </div>
+=======
+<div class="sp-card col-xs-12 col-xs-6" ng-controller="NextWeekPactController as nextWeekPactCtrl">
+  <div class="sp-card-content">
+    <p>Next Week</p>
+    <div ng-show="user.pact_duration && user.pact_stakes">
+       <div>
+          <button type="button" class="btn btn-primary" ng-click="decreaseHours()">-</button>
+          Hours: {{user.pact_duration / 60 | ceil}}
+          <button type="button" class="btn btn-primary" ng-click="increaseHours()">+</button>      
+       </div>
+       <div>
+          <button type="button" class="btn btn-success" ng-click="decreaseStakes()">-</button>
+             
+          Stakes: {{user.pact_stakes | currency:"$":0}}
+          <button type="button" class="btn btn-success" ng-click="increaseStakes()">+</button>
+       </div> 
+         <button type="button" class="btn" ng-click="save()" ng-show="changed">Save Changes</button>
+       <div >
+          
+       </div>  
+    </div>    
+  </div>
+</div>
+>>>>>>> d37119d9da638032921a99ffb1a4b44b2a3c7f10
