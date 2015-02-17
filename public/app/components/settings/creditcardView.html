@@ -1,0 +1,50 @@
+<div class="sp-card-half col-xs-12" ng-controller="creditcardController">
+  <div class="sp-card-content">
+    <h4><i class="fa fa-circle sp-blue"></i> Creditcard </h4>
+    <form name="creditcardForm" novalidate ng-submit="
+       creditcardForm.newCreditcard.$valid && 
+       save()">
+       
+      <!-- Creditcard -->
+      <div class="row">
+        
+          <div class="form-group" ng-class="{ 'has-error' : submitted && passwordForm.newPassword.$invalid}">
+            
+            <div class="col-xs-12 col-sm-12">
+            <input type="text" id="creditcard" name="creditcardNumber" ng-model="user.creditcard" placeholder="Creditcard  Number" ng-minlength=13 ng-required=true tabindex=4 class="form-control">
+            </div>
+            
+            <div class="col-xs-12 col-sm-5">
+            <input type="text" name="month" id="month" class="form-control" ng-model="user.month" placeholder="MM" tabindex="3">
+            </div>
+            <div class="col-xs-12 col-sm-5">
+            <input type="text" name="year" id="year" class="form-control" ng-model="user.year" placeholder="YY" tabindex="3">
+            </div>
+            
+            <div class="col-xs-12 col-sm-2">
+            <input type="password" name="CCV" id="CCV" class="form-control" ng-model="user.ccv" placeholder="CCV" tabindex="3">
+            </div>
+            
+            <div class="col-xs-12 col-sm-12">
+            <input type="text" name="cardholderName" id="cardholderName" class="form-control" ng-model="user.cardholderName" placeholder="Name on card" tabindex="3">
+            </div>
+            
+            <p class="help-block" ng-show="submitted && creditcardForm.newCreditcard.$invalid">Creditcard number is too short!</p>
+          
+        </div>
+        
+        <div class="col-xs-12 col-sm-12">
+          <input type="submit" value="Update" class="btn btn-primary btn-block btn-lg" tabindex="6" ng-click="submitted=true">
+        </div>
+        
+      </div>
+
+      <!-- SERVER ERROR -->
+      <p ng-show="error.serverError" class="bg-danger">Unknown Server Error - please try again later!</p>
+      <p ng-show="success" class="bg-info">Creditcard has been updated!</p>
+      <!-- SUBMIT -->
+
+    </form>
+
+  </div>
+</div>

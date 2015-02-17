@@ -64,7 +64,8 @@ app.config(function($stateProvider) {
       url: "/myStudy",
       data: {
         activeBoxes: [
-          "/app/components/pact/progressView.html",
+          "/app/components/notification/creditcard-notificationView.html",
+		  "/app/components/pact/progressView.html",
           "/app/components/myStudy/totalStudyTimeView.html",
           "/app/components/pact/nextWeekPactView.html",
         ]
@@ -78,7 +79,9 @@ app.config(function($stateProvider) {
       data: {
         activeBoxes: [
           "/app/components/settings/holidayView.html",
-          "/app/components/settings/passwordView.html",
+		  
+		  "/app/components/settings/creditcardView.html",
+		  "/app/components/settings/passwordView.html",
           "/app/components/settings/deleteView.html",
         ]
       },
